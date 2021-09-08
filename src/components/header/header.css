@@ -1,0 +1,20 @@
+header {
+    background-color: rgb(13, 13, 13);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+header img {
+    width: 183px;
+    height: 70px;
+}
+.headerMobileComponent{
+    display: none;
+}
+@media screen and (max-width: 750px) {
+    header  {
+        display: none;
+    }
+} 
+ 

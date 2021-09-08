@@ -1,0 +1,52 @@
+html{background-color: rgb(13, 13, 13);}
+.App{
+  background-color: rgb(13, 13, 13);
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(150px, 170px) 10fr;
+  grid-template-rows: 0 1fr;
+  grid-template-areas: 
+  "header header"
+  "sidebar content"
+}
+.Header {
+  z-index: 1000;
+  grid-area: header;
+}
+.Sidebar {
+  grid-area: sidebar;
+  position: sticky;
+  top: 0;
+  max-width: 300px;
+  color: aliceblue;
+}
+.Content{
+  grid-area: content;
+  margin-top: 100px;
+  padding-top: 1em;
+  width: 100%;
+  height: 100%;
+  background-color: #bbbbbb;
+  border-radius: 15px;
+
+}
+.contentConteiner {
+  padding: 50px;
+}
+
+@media screen and (max-width: 750px) {
+  .App{
+
+    grid-template-areas: 
+    "header header"
+    "content content"
+  }
+  .Sidebar{display: none;}
+  .contentConteiner {
+      padding: 5px;
+  }
+
+
+}
+
