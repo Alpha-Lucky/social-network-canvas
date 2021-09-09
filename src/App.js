@@ -1,15 +1,15 @@
 import './App.css';
 import { Route } from 'react-router-dom';
 import Header from './components/header/Header';
-import Sidebar from './components/sidebar/Sidebar';
 import Navbar from './components/navBar/Navbar';
-import Profile from './components/pages/profile/Profile';
 import Music from './components/pages/music/Music';
 import React from 'react';
 import News from './components/pages/news/News';
 import Setting from './components/pages/sitting/Setting';
-import Friends from './components/pages/friends/Friends';
 import MessagesContainer from './components/pages/messages/messageContainer';
+import ProfileContainer from './components/pages/profile/ProfileContainer';
+import SidebarContainer from './components/sidebar/SidebarContainer';
+import FriendsContainer from './components/pages/friends/FriendsContainer';
 
 
 
@@ -23,16 +23,16 @@ function App(props) {
         <Navbar />
       </div>
       <div className="Sidebar" >
-      <Route path='/' render={ () => <Sidebar state={props.state.sideBar} />} />
+      <Route path='/' render={ () => <SidebarContainer />} />
       </div>
       <div className="Content">
             <div className="contentConteiner">
-            <Route path='/Profile' render={ () => <Profile state={props.state.profilePage} dispatch={props.dispatch} />} />
-            <Route path='/Messages' render={ () => <MessagesContainer state={props.state.messagesPage} dispatch={props.dispatch}   />} />
+            <Route path='/Profile' render={ () => <ProfileContainer />} />
+            <Route path='/Messages' render={ () => <MessagesContainer   />} />
             <Route path='/Music' component={Music} />
             <Route path='/News' component={News} />
             <Route path='/Setting' component={Setting} />
-            <Route path='/Friends' render={ () => <Friends state={props.state.friends} />} />
+            <Route path='/Friends' render={ () => <FriendsContainer/>} />
             </div>
         </div>
       </div>

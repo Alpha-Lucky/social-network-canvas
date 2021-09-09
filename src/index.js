@@ -6,26 +6,28 @@ import App from './App';
 import './index.css';
 import store from './redux/reduxStore';
 import reportWebVitals from './reportWebVitals';
+import StoreContext, { Provider } from './storeContext';
+
 
 
 let entireThree = (state) => {
-    ReactDOM.render(
-      <React.StrictMode>
-        <BrowserRouter>
-        <App 
-          state={state}
-          dispatch={store.dispatch.bind(store)} />
-        </BrowserRouter>
-      </React.StrictMode>,
-      document.getElementById('root')
-    );
-    }
+  ReactDOM.render(
+    <React.StrictMode>
+      <BrowserRouter>
+    <Provider store={store}> 
+          <App />
+</Provider>
+      </BrowserRouter>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
 
-    entireThree(store.getState())
-    store.subscribe(() => {
-      let state = store.getState()
-      entireThree(state)
-    })
+entireThree(store.getState())
+store.subscribe(() => {
+  let state = store.getState()
+  entireThree(state)
+})
 
 
 // If you want to start measuring performance in your app, pass a function

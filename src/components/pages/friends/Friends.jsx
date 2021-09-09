@@ -7,7 +7,7 @@ let Friends = (props) => {
         {props.state.friends.map((item, index) => {
               return (
                 <div key={index} className={item.classesFriends}>
-                  <img alt="" src={item.urlImg} />
+                  <img alt={item.id} src={item.urlImg} />
                   <span>{item.name}</span>
                 </div>
               );

@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
-import { SidebarData } from '../dataLinks/SidebarData';
 import './sidebar.css'
 
 
 let Sidebar = (props) => {
     return(
      <div className="sidebarComponent">
-            {SidebarData.map((item, index) => {
+            {props.SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cNameSide} >
                   <Link to={item.path} className={item.cNameSideLinks} >
@@ -18,15 +17,15 @@ let Sidebar = (props) => {
               );
             })}
         
-{/*         <Link to='/Friends' className="frends" >
+        <Link to='/Friends' className="frends" >
         {props.state.friends.map((item, index) => {
               return (
                 <div key={index} className={item.classes}>
-                  <img alt="" src={item.urlImg} />
+                  <img alt={item.id} src={item.urlImg} />
                 </div>
               );
             })}
-        </Link> */}
+        </Link>
      </div>
     )
 }
