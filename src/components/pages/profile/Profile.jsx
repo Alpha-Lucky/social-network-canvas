@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileUser from './profileComponent/UserProfile';
+import ProfileUserContainer from './profileComponent/UserProfileContainer';
 import './styleCont.css';
 import PostOne from './UserPost/PostOne.jsx';
 
@@ -9,7 +9,7 @@ const Profile = (props) => {
     return (
         <div className="conta" >
             <div className="boxAvatar">
-            <ProfileUser dispatch={props.dispatch}  updateText={props.state.updateTextPost} />
+            <ProfileUserContainer dispatch={props.dispatch}  updateText={props.state.updateTextPost} />
             </div>
             <div className="boxPost">
             {postMapContOne}

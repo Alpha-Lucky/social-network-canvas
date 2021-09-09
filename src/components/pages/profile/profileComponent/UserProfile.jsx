@@ -1,16 +1,14 @@
 import React from 'react';
-import { addPostActionCreator, updatePostActionCreator } from '../../../../redux/profileReducer';
 
 const ProfileUser= (props) => {
    
     let clickSubmitProfile = () => {
-    props.dispatch(addPostActionCreator())
+    props.clickSubmitProfileContainer()
     }
 
     let updateText = (e) => {
         let text = e.target.value
-        let action = updatePostActionCreator(text)
-        props.dispatch(action)
+        props.updateTextContainer(text)
     }
 
 
@@ -21,9 +19,10 @@ const ProfileUser= (props) => {
             <h1> Title: bla bla bla</h1><br/>
             </div>
             <div>
-            <legend>Новый пост</legend><br/>
-            <textarea cols="25" rows="5" placeholder="new post"  value={props.updateText} onChange={updateText} /><br/>
-            <input type="submit" onClick={clickSubmitProfile} /><br/>
+                <div className="boxNewPost">
+                   <textarea className="textariaProfile" placeholder="new post"  value={props.updateText} onChange={updateText} /><br/>
+            <input className="submitProfile" type="submit" onClick={clickSubmitProfile} value="ok" /><br/>
+            </div>
             </div>
         </div>
     )

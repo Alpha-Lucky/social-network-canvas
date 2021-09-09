@@ -69,7 +69,6 @@
 
 }
 .propsName>span>a.active {
-    background-color: rgb(192, 0, 0);
-    border:plum 3px solid;
+    color: rgb(163, 12, 12);
 }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { addMessageActionCreator, updateMessageActionCreator } from '../../../redux/messagesReducer';
 import UserNickName from './Contact/contact';
 import PropsMessage from './MessageInfo/propsMessage';
 import './styleMass.css'
@@ -14,11 +13,10 @@ const Messages = (props) => {
     
     let changeText = (e) => {
         let text = e.target.value;
-        let action = updateMessageActionCreator(text) 
-        props.dispatch(action)
+        props.changeTextContainer(text) 
     }
     let clickSubValue = () => {
-        props.dispatch(addMessageActionCreator())
+        props.clickSubValueContainer()
     }
 
     return (
