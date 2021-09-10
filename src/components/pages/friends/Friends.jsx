@@ -4,7 +4,7 @@ import './friends.css'
 let Friends = (props) => {
     return(
         <div className="friendsContainer">
-        {props.state.friends.map((item, index) => {
+        {props.friends.map((item, index) => {
               return (
                 <div key={index} className={item.classesFriends}>
                   <img alt={item.id} src={item.urlImg} />

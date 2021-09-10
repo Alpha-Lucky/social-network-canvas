@@ -1,17 +1,16 @@
 import React from 'react';
 
-const ProfileUser= (props) => {
-   
+const ProfileUser = (props) => { 
     let clickSubmitProfile = () => {
     props.clickSubmitProfileContainer()
     }
 
-    let updateText = (e) => {
-        let text = e.target.value
-        props.updateTextContainer(text)
+let updateText = (e) => {
+    let text = e.target.value
+    props.updateTextContainer(text)
     }
 
-
+debugger
     return (
         <div className="glavCont" >
             <div>

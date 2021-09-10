@@ -28,11 +28,11 @@ function App(props) {
       <div className="Content">
             <div className="contentConteiner">
             <Route path='/Profile' render={ () => <ProfileContainer />} />
-            <Route path='/Messages' render={ () => <MessagesContainer   />} />
+            <Route path='/Messages' render={ () => <MessagesContainer />} />
             <Route path='/Music' component={Music} />
             <Route path='/News' component={News} />
             <Route path='/Setting' component={Setting} />
-            <Route path='/Friends' render={ () => <FriendsContainer/>} />
+            <Route path='/Friends' render={ () => <FriendsContainer />} />
             </div>
         </div>
       </div>

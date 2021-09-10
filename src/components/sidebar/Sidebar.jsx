@@ -6,7 +6,7 @@ import './sidebar.css'
 let Sidebar = (props) => {
     return(
      <div className="sidebarComponent">
-            {props.SidebarData.map((item, index) => {
+            {props.state.SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cNameSide} >
                   <Link to={item.path} className={item.cNameSideLinks} >
@@ -21,7 +21,7 @@ let Sidebar = (props) => {
         {props.state.friends.map((item, index) => {
               return (
                 <div key={index} className={item.classes}>
-                  <img alt={item.id} src={item.urlImg} />
+                  <img alt={item.name} src={item.urlImg} />
                 </div>
               );
             })}

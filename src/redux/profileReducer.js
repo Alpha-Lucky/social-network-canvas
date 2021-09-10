@@ -7,14 +7,15 @@ let i = {
         { post: 'I`m happy', id: 2, like: 123 },
         { post: 'How are you? i`m fine', id: 3, like: 23 }
       ],
-      updateTextPost: ''
+      updateTextPost: 'prof'
 }
 
 const profileReducer = (state = i, action) => {
     switch (action.type) {
         case UPDATE_POST: {
-            state.updateTextPost = action.text;
-            return state
+            let stateCopy = {...state}
+            stateCopy.updateTextPost = action.text;
+            return stateCopy
         }
         case ADD_POST: {
             let newPost = {
@@ -22,9 +23,11 @@ const profileReducer = (state = i, action) => {
                 post: state.updateTextPost,
                 like: 0
               }
-              state.postMessage.push(newPost)
-              state.updateTextPost = '';
-              return state
+              let stateCopy = {...state}
+              stateCopy.postMessage = [...state.postMessage]
+              stateCopy.postMessage.push(newPost)
+              stateCopy.updateTextPost = '';
+              return stateCopy
         }
         default: {
             return state

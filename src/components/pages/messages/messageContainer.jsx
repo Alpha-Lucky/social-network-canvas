@@ -1,10 +1,35 @@
-import React from 'react';
+
+import { connect } from 'react-redux';
 import { addMessageActionCreator, updateMessageActionCreator } from '../../../redux/messagesReducer';
-import StoreContext from '../../../storeContext';
 import Messages from './message';
 
+let stateData = (state) => {
 
-const MessagesContainer = (props) => {
+    return {
+        state: state.messagesPage
+    }
+}
+
+let dispatchData = (dispatch) => {
+
+    return {
+        changeTextContainer: (text) => {
+            let action = updateMessageActionCreator(text)
+            dispatch(action)
+        },
+        clickSubValueContainer: () => {
+            dispatch(addMessageActionCreator())
+        }
+    }
+}
+
+let MessagesContainer = connect(stateData, dispatchData)(Messages)
+
+export default MessagesContainer
+
+
+
+/* const MessagesContainer = (props) => {
     return (
         <StoreContext.Consumer>
             {
@@ -16,7 +41,7 @@ const MessagesContainer = (props) => {
                     }
                     let clickSubValueContainer = () => {
                         store.dispatch(addMessageActionCreator())
-                        
+
                     }
                     return <Messages
                         dispatch={store.dispatch}
@@ -28,7 +53,4 @@ const MessagesContainer = (props) => {
         </StoreContext.Consumer>
 
     )
-}
-
-
-export default MessagesContainer
+} */

@@ -1,10 +1,18 @@
 import React from 'react';
-import StoreContext from '../../../storeContext';
+import { connect } from 'react-redux';
 import Profile from './Profile';
 
 
+let stateDataProfile = (state) => {
+    return {
+        state: state.profilePage
+    }
+}
 
-const ProfileContainer = (props) => {
+
+let ProfileContainer = connect(stateDataProfile)(Profile)
+
+/* const ProfileContainerdsadsa = (props) => {
     return (
         <StoreContext.Consumer>
         {
@@ -16,5 +24,5 @@ const ProfileContainer = (props) => {
         </StoreContext.Consumer>
     )
 
-}
+} */
 export default ProfileContainer

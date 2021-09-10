@@ -1,9 +1,33 @@
-import React from 'react';
+
+import { connect } from 'react-redux';
 import { addPostActionCreator, updatePostActionCreator } from '../../../../redux/profileReducer';
-import StoreContext from '../../../../storeContext';
 import ProfileUser from './UserProfile';
 
-const ProfileUserContainer = () => {
+let stateDataProfileUser = (state) => {
+    return {
+        updateText: state.profilePage.updateTextPost
+    }
+}
+
+let dispatchDataProfileUser = (dispatch) => {
+    return {
+            clickSubmitProfileContainer: () => {
+                dispatch(addPostActionCreator())
+            },
+        updateTextContainer: (text) => {
+                
+                dispatch(updatePostActionCreator(text))
+        }
+    }
+}
+
+let ProfileUserContainer = connect(stateDataProfileUser, dispatchDataProfileUser)(ProfileUser)
+
+
+
+export default ProfileUserContainer
+
+/* const ProfileUserContdsadsaainer = () => {
     return (
         <StoreContext.Consumer>
             {
@@ -28,6 +52,4 @@ const ProfileUserContainer = () => {
             }
         </StoreContext.Consumer>
     )
-}
-
-export default ProfileUserContainer
+} */
