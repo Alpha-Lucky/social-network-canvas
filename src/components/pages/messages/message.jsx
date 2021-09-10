@@ -9,8 +9,8 @@ import './styleMass.css'
 
 const Messages = (props) => {
 
-    let dialogMap = props.state.dialogData.map(el => <UserNickName name={el.name} id={el.id} />);
-    let messageMap = props.state.messageData.map(el => <PropsMessage messageThisUser={el.message} id={el.id} />);
+    let dialogMap = props.state.dialogData.map(el => <UserNickName key={el.id} name={el.name} id={el.id} />);
+    let messageMap = props.state.messageData.map(el => <PropsMessage key={el.id} messageThisUser={el.message} id={el.id} />);
     
     let changeText = (e) => {
         let text = e.target.value;

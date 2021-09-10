@@ -6,7 +6,7 @@ import PostOne from './UserPost/PostOne.jsx';
 
 const Profile = (props) => {
     
-    let postMapContOne = props.state.postMessage.map(el => <PostOne  hisPost={el.post} id={el.id} likes={el.like} />)
+    let postMapContOne = props.state.postMessage.map(el => <PostOne  hisPost={el.post} key={el.id} id={el.id} likes={el.like} />)
     return (
         <div className="conta" >
             <div className="boxAvatar">
