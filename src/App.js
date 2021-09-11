@@ -9,7 +9,7 @@ import Setting from './components/pages/sitting/Setting';
 import MessagesContainer from './components/pages/messages/messageContainer';
 import ProfileContainer from './components/pages/profile/ProfileContainer';
 import SidebarContainer from './components/sidebar/SidebarContainer';
-import FriendsContainer from './components/pages/friends/FriendsContainer';
+import UsersContainer from './components/pages/users/usersContainer';
 
 
 
@@ -32,7 +32,7 @@ function App(props) {
             <Route path='/Music' component={Music} />
             <Route path='/News' component={News} />
             <Route path='/Setting' component={Setting} />
-            <Route path='/Friends' render={ () => <FriendsContainer />} />
+            <Route path='/Friends' render={ () => <UsersContainer />} />
             </div>
         </div>
       </div>

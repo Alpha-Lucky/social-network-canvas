@@ -15,12 +15,14 @@
     text-decoration: none;
     list-style-type: none;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .linkSideDec {
     text-decoration: none;
     color: #bbbbbb;
     font-size: 23px;
+    cursor: pointer;
 }
 .linkSideDec .active { 
     color: tomato;

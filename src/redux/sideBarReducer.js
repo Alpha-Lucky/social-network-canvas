@@ -56,17 +56,22 @@ let i = {
 
     }
   ],
-  friends: [
-    { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Michael', id: 1 },
-    { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Alex', id: 2 },
-    { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Angela', id: 3 },
-    { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Alisa', id: 4 },
-    { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Helena', id: 5 }
+  users: [
+    {id: 1, followed: true, urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Michael', status: "i m devoloper", location: {sity: "Moscow", country: "Russia" } },
+    {id: 2, followed: false, urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Alex',  status: "Be happy", location: {sity: "Krasnodar", country: "Russia" } },
+    {id: 3, followed: false, urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Angela', status: "Smile" , location: {sity: "Orel", country: "Russia" } },
+    {id: 4, followed: true, urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Alisa', status: "I m crazy" , location: {sity: "Sochi", country: "Russia" } },
+    {id: 5, followed: false, urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Helena', status: "Workining", location: {sity: "Moscow", country: "Russia" } }
   ]
 }
 
 const sideBarReducer = (state = i, action) => {
-
-  return state
+   return state
 }
+
+/* export const followActionCreator = () => ({ type: FOLLOW, userId })
+export const unFollowActionCreator = () => ({ type: UNFOLLOW, userId })
+export const SET_USERSActionCreator = () => ({ type: SET_USERS, userId }) */
+
+
 export default sideBarReducer

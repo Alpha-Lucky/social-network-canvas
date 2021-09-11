@@ -18,7 +18,7 @@ let Sidebar = (props) => {
             })}
         
         <Link to='/Friends' className="frends" >
-        {props.state.friends.map((item, index) => {
+        {props.state.users.map((item, index) => {
               return (
                 <div key={index} className={item.classes}>
                   <img alt={item.name} src={item.urlImg} />

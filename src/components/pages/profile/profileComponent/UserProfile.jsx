@@ -10,7 +10,6 @@ let updateText = (e) => {
     props.updateTextContainer(text)
     }
 
-debugger
     return (
         <div className="glavCont" >
             <div>
