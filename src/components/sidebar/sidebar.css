@@ -33,7 +33,7 @@
     border-top: rgb(235, 138, 11)3px double;
     border-bottom: rgb(235, 138, 11) 3px double;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     border-radius: 15px;
 }
