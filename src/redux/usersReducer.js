@@ -3,6 +3,7 @@ const UNFOLLOW = "UNFOLLOW"
 const SET_USERS = "SET_USERS"
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE"
 const SET_TOTAL_COUNT = "SET_TOTAL_COUNT"
+const TOOGLE_IS_FETHING = "TOOGLE_IS_FETHING"
 
 
 
@@ -12,7 +13,8 @@ let i = {
   ],
   pageSize: 5,
   totalUsersCount: 1,
-  currentPage: 1
+  currentPage: 1,
+  isFethining: true
 }
 
 const usersReducer = (state = i, action) => {
@@ -52,6 +54,9 @@ const usersReducer = (state = i, action) => {
       case SET_TOTAL_COUNT: {
         return {...state, totalUsersCount: action.totalUsersCount}
     }
+    case TOOGLE_IS_FETHING: {
+      return {...state, isFethining: action.isFethining}
+  }
     default: {
       return state
     }
@@ -63,6 +68,7 @@ export const unFollowActionCreator = (userId) => ({ type: UNFOLLOW, userId })
 export const setUsersActionCreator = (users) => ({ type: SET_USERS, users })
 export const setCurrentActionCreator = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
 export const setTotalUsersActionCreator = (totalUsersCount) => ({ type: SET_TOTAL_COUNT, totalUsersCount })
+export const toogleIsFethingActionCreator = (isFethining) => ({ type: TOOGLE_IS_FETHING, isFethining })
 
 export default usersReducer
 
