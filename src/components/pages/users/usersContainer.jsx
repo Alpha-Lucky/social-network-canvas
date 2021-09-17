@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { followActionCreator, setCurrentActionCreator, setTotalUsersActionCreator, setUsersActionCreator, toogleIsFethingActionCreator, unFollowActionCreator } from '../../../redux/usersReducer';
+import { follow, setCurrentPage, setTotalUsersCount, setUsers, toogleIsFething, unFollow } from '../../../redux/usersReducer';
 import * as axios from 'axios';
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
@@ -56,31 +56,33 @@ let stateDataFriends = (state) => {
   }
 }
 
-let dispatchDataFriends = (dispatch) => {
+/* let dispatchDataFriends = (dispatch) => {
   return {
     follow: (userId) => {
-      dispatch(followActionCreator(userId))
+      dispatch(follow(userId))
     },
       unFollow: (userId) => {
-    dispatch(unFollowActionCreator(userId))
+    dispatch(unFollow(userId))
   },
     setUsers: (users) => {
-      dispatch(setUsersActionCreator(users))
+      dispatch(setUsers(users))
     },
     setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentActionCreator(pageNumber))
+      dispatch(setCurrent(pageNumber))
     },
     setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersActionCreator(totalCount))
+      dispatch(setTotalUsers(totalCount))
     },
     toogleIsFething: (isFethining) => {
-      dispatch(toogleIsFethingActionCreator(isFethining))
+      dispatch(toogleIsFething(isFethining))
     }
 }
-}
+} */
 
 
-let UsersContainer = connect(stateDataFriends, dispatchDataFriends)(UsersComponent)
+let UsersContainer = connect(stateDataFriends, 
+  {follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFething})
+(UsersComponent)
 
 
 export default UsersContainer

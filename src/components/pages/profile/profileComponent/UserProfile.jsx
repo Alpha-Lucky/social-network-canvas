@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfileInfo from './ProfileInfo';
 
 const ProfileUser = (props) => { 
     let clickSubmitProfile = () => {
@@ -12,10 +13,7 @@ let updateText = (e) => {
 
     return (
         <div className="glavCont" >
-            <div>
-            <img alt="" src="https://thumb-p2.xhcdn.com/a/b8uwfRlvc9csVIslhweiSQ/000/142/317/692_1000.jpg" />
-            <h1> Title: bla bla bla</h1><br/>
-            </div>
+            <ProfileInfo profile={props.profile}/>
             <div>
                 <div className="boxNewPost">
                    <textarea className="textariaProfile" placeholder="new post"  value={props.updateText} onChange={updateText} /><br/>

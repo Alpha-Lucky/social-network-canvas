@@ -1,6 +1,8 @@
 import ava from '../../img/avaDefolt.jpg'
 import React from 'react';
 import './users.css'
+import { NavLink } from 'react-router-dom';
+
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
@@ -19,7 +21,9 @@ let Users = (props) => {
     {
       props.users.map(u => <div className="friendsContainer__eUser" kay={u.id}>
         <div className="eUser__ava">
+          <NavLink to={'/profile/' + u.id}>
           <img src={u.photos.small != null ? u.photos.small : ava} alt={u.id} />
+          </NavLink>
           {u.followed
             ? <button onClick={() => { props.unFollow(u.id) }}>Unfollow</button>
             : <button onClick={() => { props.follow(u.id) }}>follow</button>

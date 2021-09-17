@@ -1,16 +1,15 @@
 import React from 'react';
 import '../styleCont.css';
+import MapToPost from './MapToPost';
 
 
 const PostOne = (props) => {
-
+    let postMapContOne = props.postMessage.map(el => <MapToPost  hisPost={el.post} key={el.id} id={el.id} likes={el.like} />)
     return (
-            <div className="boxMini">
-            <img alt="" src="https://thumb-p2.xhcdn.com/a/b8uwfRlvc9csVIslhweiSQ/000/142/317/692_1000.jpg"></img>
-            <h1>{props.hisPost}</h1>
-             <div><span>likes:{props.likes}</span></div>
-            </div>
-            )
+        <div>
+        {postMapContOne}
+        </div>
+        )
 
 }
 export default PostOne

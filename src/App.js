@@ -27,7 +27,7 @@ function App(props) {
       </div>
       <div className="Content">
             <div className="contentConteiner">
-            <Route path='/Profile' render={ () => <ProfileContainer />} />
+            <Route path='/Profile/:userId?' render={ () => <ProfileContainer />} />
             <Route path='/Messages' render={ () => <MessagesContainer />} />
             <Route path='/Music' component={Music} />
             <Route path='/News' component={News} />
