@@ -1,14 +1,12 @@
 import React from 'react';
 import './header.css'
-import logoHeader from '../img/1.png'
+import { NavLink } from 'react-router-dom';
 
 
-let Header = () => {
+let Header = (props) => {
     return(
         <header>
-            <img src={logoHeader} alt="Logo" />
-            <div className="headerMobileComponent">
-            </div>
+                { props.isAuth ? <NavLink className="header__login" to={'/login'}>{props.login}</NavLink>   :  <NavLink className="header__login" to={'/login'}>Login</NavLink> }
         </header>
     )
 }

@@ -2,7 +2,7 @@ import ava from '../../img/avaDefolt.jpg'
 import React from 'react';
 import './users.css'
 import { NavLink } from 'react-router-dom';
-
+import { usersApi } from '../../../api/api';
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
@@ -25,8 +25,21 @@ let Users = (props) => {
           <img src={u.photos.small != null ? u.photos.small : ava} alt={u.id} />
           </NavLink>
           {u.followed
-            ? <button onClick={() => { props.unFollow(u.id) }}>Unfollow</button>
-            : <button onClick={() => { props.follow(u.id) }}>follow</button>
+            ? <button onClick={() => { 
+              usersApi.unfollow(u.id).then(data => {
+                if(data.resultCode === 0) {}
+                props.unFollow(u.id)
+              })
+
+               }}>unfollow</button>
+            
+              : <button onClick={() => {
+                usersApi.follow(u.id).then(data => {
+                if(data.resultCode === 0) {}
+                props.follow(u.id)
+              })
+
+               }}>follow</button>
           }
         </div>
         <div className="eUser__description">

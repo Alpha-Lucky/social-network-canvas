@@ -31,8 +31,8 @@ export const SidebarData = [
     cNameSideLinks:'linkSideDec'
   },
   {
-    title: 'Music',
-    path: '/Music',
+    title: 'Login',
+    path: '/login',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text',
     cNameSide: 'linkSide',

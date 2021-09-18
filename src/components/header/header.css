@@ -1,17 +1,21 @@
 header {
     background-color: rgb(13, 13, 13);
+    background-image: url(../img/1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #bbbbbb;
     height: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
  }
-header img {
-    width: 183px;
-    height: 70px;
+.header__login{
+    text-decoration: none;
+    color: #bbbbbb;
+    font-size: 15px;
+    margin: 30px;
 }
-.headerMobileComponent{
-    display: none;
-}
+
 @media screen and (max-width: 750px) {
     header  {
         display: none;

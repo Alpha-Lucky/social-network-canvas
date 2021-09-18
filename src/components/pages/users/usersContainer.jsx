@@ -1,31 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { follow, setCurrentPage, setTotalUsersCount, setUsers, toogleIsFething, unFollow } from '../../../redux/usersReducer';
-import * as axios from 'axios';
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
-
+import { usersApi } from '../../../api/api';
 
 
 class UsersComponent extends React.Component {
 
   componentDidMount() {
     this.props.toogleIsFething(true)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-    .then(response => {
+    usersApi.getUsers(this.props.currentPage ,this.props.pageSize).then(data => {
       this.props.toogleIsFething(false)
-      this.props.setUsers(response.data.items)
-      this.props.setTotalUsersCount(response.data.totalCount)
+      this.props.setUsers(data.items)
+      this.props.setTotalUsersCount(data.totalCount)
     })
   }
 
   onPageChange = (pageNumber) => {
     this.props.toogleIsFething(true)
     this.props.setCurrentPage(pageNumber)
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
-    .then(response => {
+    usersApi.updateUsers(pageNumber, this.props.pageSize).then(data => {
       this.props.toogleIsFething(false)
-      this.props.setUsers(response.data.items)
+      this.props.setUsers(data.items)
     })
   }
 
@@ -56,28 +53,6 @@ let stateDataFriends = (state) => {
   }
 }
 
-/* let dispatchDataFriends = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(follow(userId))
-    },
-      unFollow: (userId) => {
-    dispatch(unFollow(userId))
-  },
-    setUsers: (users) => {
-      dispatch(setUsers(users))
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrent(pageNumber))
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsers(totalCount))
-    },
-    toogleIsFething: (isFethining) => {
-      dispatch(toogleIsFething(isFethining))
-    }
-}
-} */
 
 
 let UsersContainer = connect(stateDataFriends, 

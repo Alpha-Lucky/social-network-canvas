@@ -53,7 +53,6 @@ let i = {
       cName: 'nav-text',
       cNameSide: 'linkSide',
       cNameSideLinks: 'linkSideDec'
-
     }
   ],
   users: [
