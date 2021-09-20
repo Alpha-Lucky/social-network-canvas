@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { follow, setCurrentPage, setTotalUsersCount, setUsers, toogleIsFething, unFollow } from '../../../redux/usersReducer';
+import { follow, setCurrentPage, setTotalUsersCount, setUsers, toogleFollowingProgres, toogleIsFething, unFollow } from '../../../redux/usersReducer';
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
 import { usersApi } from '../../../api/api';
@@ -37,6 +37,8 @@ class UsersComponent extends React.Component {
     users={this.props.users}
     unFollow={this.props.unFollow}
     follow={this.props.follow}
+    followingInProgres={this.props.followingInProgres}
+    toogleFollowingProgres={this.props.toogleFollowingProgres}
 
      />
      </>
@@ -49,14 +51,15 @@ let stateDataFriends = (state) => {
     pageSize: state.usersPage.pageSize,
     totalUsersCount: state.usersPage.totalUsersCount,
     currentPage: state.usersPage.currentPage,
-    isFethining: state.usersPage.isFethining
+    isFethining: state.usersPage.isFethining,
+    followingInProgres: state.usersPage.followingInProgres
   }
 }
 
 
 
 let UsersContainer = connect(stateDataFriends, 
-  {follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFething})
+  {follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFething, toogleFollowingProgres})
 (UsersComponent)
 
 

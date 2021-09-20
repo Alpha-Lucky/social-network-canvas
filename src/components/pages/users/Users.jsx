@@ -25,21 +25,21 @@ let Users = (props) => {
           <img src={u.photos.small != null ? u.photos.small : ava} alt={u.id} />
           </NavLink>
           {u.followed
-            ? <button onClick={() => { 
+            ? <button disabled={props.followingInProgres.some(id => id === u.id)} onClick={() => { 
+              props.toogleFollowingProgres(u.id, true)
               usersApi.unfollow(u.id).then(data => {
                 if(data.resultCode === 0) {}
                 props.unFollow(u.id)
-              })
-
-               }}>unfollow</button>
+                props.toogleFollowingProgres(u.id, false)
+              })}}>unfollow</button>
             
-              : <button onClick={() => {
+              : <button disabled={props.followingInProgres.some(id => id === u.id)}  onClick={() => {
+                props.toogleFollowingProgres(u.id, true)
                 usersApi.follow(u.id).then(data => {
                 if(data.resultCode === 0) {}
                 props.follow(u.id)
-              })
-
-               }}>follow</button>
+                props.toogleFollowingProgres(u.id, false)
+                })}}>follow</button>
           }
         </div>
         <div className="eUser__description">
