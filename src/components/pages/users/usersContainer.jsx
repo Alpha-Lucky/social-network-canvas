@@ -1,47 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { follow, setCurrentPage, setTotalUsersCount, setUsers, toogleFollowingProgres, toogleIsFething, unFollow } from '../../../redux/usersReducer';
+import { follow, getUsersThunk, setCurrentPage, toogleFollowingProgres, unfollow } from '../../../redux/usersReducer';
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
-import { usersApi } from '../../../api/api';
+
 
 
 class UsersComponent extends React.Component {
 
   componentDidMount() {
-    this.props.toogleIsFething(true)
-    usersApi.getUsers(this.props.currentPage ,this.props.pageSize).then(data => {
-      this.props.toogleIsFething(false)
-      this.props.setUsers(data.items)
-      this.props.setTotalUsersCount(data.totalCount)
-    })
+    this.props.getUsersThunk(this.props.currentPage, this.props.pageSize)
   }
 
   onPageChange = (pageNumber) => {
-    this.props.toogleIsFething(true)
-    this.props.setCurrentPage(pageNumber)
-    usersApi.updateUsers(pageNumber, this.props.pageSize).then(data => {
-      this.props.toogleIsFething(false)
-      this.props.setUsers(data.items)
-    })
+    this.props.getUsersThunk(pageNumber, this.props.pageSize)
   }
 
   render() {
     return <>
-    {this.props.isFethining ? <Preloader /> : null} 
-    <Users 
-    totalUsersCount={this.props.totalUsersCount} 
-    pageSize={this.props.pageSize} 
-    currentPage={this.props.currentPage}
-    onPageChange={this.onPageChange}
-    users={this.props.users}
-    unFollow={this.props.unFollow}
-    follow={this.props.follow}
-    followingInProgres={this.props.followingInProgres}
-    toogleFollowingProgres={this.props.toogleFollowingProgres}
-
-     />
-     </>
+      {this.props.isFethining ? <Preloader /> : null}
+      <Users
+        totalUsersCount={this.props.totalUsersCount}
+        pageSize={this.props.pageSize}
+        currentPage={this.props.currentPage}
+        onPageChange={this.onPageChange}
+        users={this.props.users}
+        unfollow={this.props.unfollow}
+        follow={this.props.follow}
+        followingInProgres={this.props.followingInProgres}
+      />
+    </>
   }
 }
 
@@ -58,9 +46,9 @@ let stateDataFriends = (state) => {
 
 
 
-let UsersContainer = connect(stateDataFriends, 
-  {follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFething, toogleFollowingProgres})
-(UsersComponent)
+let UsersContainer = connect(stateDataFriends,
+  { follow, unfollow, setCurrentPage, toogleFollowingProgres, getUsersThunk })
+  (UsersComponent)
 
 
 export default UsersContainer
