@@ -45,10 +45,8 @@ export const addPost = () => ({ type: ADD_POST })
 export const updatePost = (text) => ({ type: UPDATE_POST, text })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 
-export const profileThunk = (id) => {
+export const profileThunk = (userId) => {
     return (dispatch) => {
-        let userId = id
-        if (!userId) { userId = 2 }
         profileApi.profile(userId).then(response => {
             dispatch(setUserProfile(response.data))
         })
