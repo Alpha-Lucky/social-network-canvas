@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { compose } from 'redux';
-import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 import { profileThunk } from '../../../redux/profileReducer';
 import Profile from './Profile';
 
@@ -35,6 +34,5 @@ let mapStateToProps = (state) => ({
 
 export default compose(
   connect(mapStateToProps, {profileThunk }),
-  withRouter,
-  withAuthRedirect) 
+  withRouter) 
   (ProfileContainer)
