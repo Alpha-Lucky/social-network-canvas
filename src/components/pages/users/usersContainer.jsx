@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { follow, getUsersThunk, setCurrentPage, toogleFollowingProgres, unfollow } from '../../../redux/usersReducer';
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
+import { compose } from 'redux';
+import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 
 
 
@@ -45,10 +47,6 @@ let stateDataFriends = (state) => {
 }
 
 
-
-let UsersContainer = connect(stateDataFriends,
-  { follow, unfollow, setCurrentPage, toogleFollowingProgres, getUsersThunk })
-  (UsersComponent)
-
-
-export default UsersContainer
+export default compose(
+  withAuthRedirect,
+  connect(stateDataFriends,{ follow, unfollow, setCurrentPage, toogleFollowingProgres, getUsersThunk })) (UsersComponent)

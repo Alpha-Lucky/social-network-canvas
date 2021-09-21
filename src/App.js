@@ -1,7 +1,7 @@
 import './App.css';
 import { Route } from 'react-router-dom';
 import Navbar from './components/navBar/Navbar';
-import Music from './components/pages/music/Music';
+import Login from './components/pages/login/Login';
 import React from 'react';
 import News from './components/pages/news/News';
 import Setting from './components/pages/sitting/Setting';
@@ -29,7 +29,7 @@ function App(props) {
             <div className="contentConteiner">
             <Route path='/Profile/:userId?' render={ () => <ProfileContainer />} />
             <Route path='/Messages' render={ () => <MessagesContainer />} />
-            <Route path='/Music' component={Music} />
+            <Route path='/Login' component={Login} />
             <Route path='/News' component={News} />
             <Route path='/Setting' component={Setting} />
             <Route path='/Friends' render={ () => <UsersContainer />} />

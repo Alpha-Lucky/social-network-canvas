@@ -31,8 +31,8 @@ let i = {
       cNameSideLinks: 'linkSideDec'
     },
     {
-      title: 'Music',
-      path: '/Music',
+      title: 'Login',
+      path: '/Login',
       icon: <IoIcons.IoIosPaper />,
       cName: 'nav-text',
       cNameSide: 'linkSide',

@@ -1,5 +1,7 @@
 
 import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 import { addMessageActionCreator, updateMessageActionCreator } from '../../../redux/messagesReducer';
 import Messages from './message';
 
@@ -23,34 +25,6 @@ let dispatchData = (dispatch) => {
     }
 }
 
-let MessagesContainer = connect(stateData, dispatchData)(Messages)
-
-export default MessagesContainer
-
-
-
-/* const MessagesContainer = (props) => {
-    return (
-        <StoreContext.Consumer>
-            {
-                (store) => {
-                    let state = store.getState().messagesPage
-                    let changeTextContainer = (text) => {
-                        let action = updateMessageActionCreator(text)
-                        store.dispatch(action)
-                    }
-                    let clickSubValueContainer = () => {
-                        store.dispatch(addMessageActionCreator())
-
-                    }
-                    return <Messages
-                        dispatch={store.dispatch}
-                        changeTextContainer={changeTextContainer}
-                        clickSubValueContainer={clickSubValueContainer}
-                        state={state} />
-                }
-            }
-        </StoreContext.Consumer>
-
-    )
-} */
+export default compose(
+    connect(stateData, dispatchData), withAuthRedirect)(Messages)   
+    

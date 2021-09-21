@@ -20,6 +20,7 @@ const Messages = (props) => {
     let clickSubValue = () => {
         props.clickSubValueContainer()
     }
+
     return (
         <div className="boxContact" onClick={() => {
             console.log(props)

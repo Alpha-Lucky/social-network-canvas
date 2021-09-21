@@ -22,16 +22,16 @@ export const usersApi = {
         return instance.get(`users?page=${pageNumber}&count=${pageSize}`).then(response => { return response.data })
 
     },
-    unfollow(id = 2) {
+    unfollow(id = 19705) {
         return instance.delete(`follow/${id}`)
     },
-    follow(id = 2) {
+    follow(id = 19705) {
         return instance.post(`follow/${id}`)
     }
 }
 
 export const profileApi = {
-    profile(userId) {
+    profile(userId = 19705) {
         return instance.get(`profile/` + userId)
     }
 }

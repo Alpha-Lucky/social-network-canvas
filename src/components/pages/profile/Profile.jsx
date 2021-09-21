@@ -5,7 +5,6 @@ import PostOne from './UserPost/PostOne.jsx';
 
 
 const Profile = (props) => {
-
     return (
         <div className="conta" >
             <div className="boxAvatar">
