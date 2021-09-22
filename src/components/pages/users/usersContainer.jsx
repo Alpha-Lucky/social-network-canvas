@@ -49,4 +49,4 @@ let stateDataFriends = (state) => {
 
 export default compose(
   withAuthRedirect,
-  connect(stateDataFriends,{ follow, unfollow, setCurrentPage, toogleFollowingProgres, getUsersThunk })) (UsersComponent)
+  connect(stateDataFriends, { follow, unfollow, setCurrentPage, toogleFollowingProgres, getUsersThunk })) (UsersComponent)

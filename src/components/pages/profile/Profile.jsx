@@ -11,7 +11,7 @@ const Profile = (props) => {
             <ProfileUserContainer />
             </div>
             <div className="boxPost">
-            <PostOne postMessage={props.postMessage}/>
+            <PostOne postMessage={props.postMessage} />
              </div>
         </div>
     )
