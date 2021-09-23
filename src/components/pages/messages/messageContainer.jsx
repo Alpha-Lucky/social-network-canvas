@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
-import { addMessageActionCreator, updateMessageActionCreator } from '../../../redux/messagesReducer';
+import { addMessageActionCreator } from '../../../redux/messagesReducer';
 import Messages from './message';
 
 let stateData = (state) => {
@@ -15,12 +15,8 @@ let stateData = (state) => {
 let dispatchData = (dispatch) => {
 
     return {
-        changeTextContainer: (text) => {
-            let action = updateMessageActionCreator(text)
-            dispatch(action)
-        },
-        clickSubValueContainer: () => {
-            dispatch(addMessageActionCreator())
+        clickSubValueContainer: (newMessageBody) => {
+            dispatch(addMessageActionCreator(newMessageBody))
         }
     }
 }

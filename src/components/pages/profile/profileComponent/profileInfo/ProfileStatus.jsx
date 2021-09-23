@@ -1,5 +1,5 @@
 import React from "react"
-import './../styleCont.css'
+import './../../styleCont.css'
 
 class ProfileStatus extends React.Component {
 

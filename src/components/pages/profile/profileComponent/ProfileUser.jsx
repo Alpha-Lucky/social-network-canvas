@@ -1,15 +1,24 @@
 import React from 'react';
-import ProfileInfo from './ProfileInfo';
+import { Field, reduxForm } from 'redux-form';
+import ProfileInfo from './profileInfo/ProfileInfo';
 
-const ProfileUser = (props) => { 
-    
-    let clickSubmitProfile = () => {
-    props.addPost()
-    }
 
-let updateText = (e) => {
-    let text = e.target.value
-    props.updatePost(text)
+const updatePostForm = (props) => {
+
+    return <form onSubmit={props.handleSubmit}>
+            <div><Field component="textarea" name="newPostBody" className="textariaProfile" /></div>
+            <div><button className="submitProfile">ok</button></div>
+    </form>
+
+} 
+
+const UpdateReduxForm = reduxForm({form: "updatePost"}) (updatePostForm)
+
+
+const ProfileUser = (props) => {
+
+    let clickSubmitProfile = (values) => {
+        return props.addPost(values.newPostBody)
     }
 
     return (
@@ -17,12 +26,18 @@ let updateText = (e) => {
             <ProfileInfo profile={props.profile} status={props.status} updateStatusThunk={props.updateStatusThunk} />
             <div>
                 <div className="boxNewPost">
-                   <textarea className="textariaProfile" placeholder="new post"  value={props.updateText} onChange={updateText} /><br/>
-            <input className="submitProfile" type="submit" onClick={clickSubmitProfile} value="ok" /><br/>
-            </div>
+
+                <UpdateReduxForm onSubmit={clickSubmitProfile} />
+
+                </div>
             </div>
         </div>
     )
 }
+
+
+
+
+
 
 export default ProfileUser

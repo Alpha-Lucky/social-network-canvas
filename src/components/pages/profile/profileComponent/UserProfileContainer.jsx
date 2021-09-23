@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { compose } from 'redux';
-import { addPost, getStatusThunk, updatePost, updateStatusThunk } from '../../../../redux/profileReducer';
+import { addPost, getStatusThunk, updateStatusThunk } from '../../../../redux/profileReducer';
 import ProfileUser from './ProfileUser';
 
 
@@ -30,4 +30,4 @@ let stateDataProfileUser = (state) => {
 }
 
 
-export default compose (connect(stateDataProfileUser, {addPost, updatePost, updateStatusThunk, getStatusThunk}), withRouter) (ProfileUserContainer)
+export default compose (connect(stateDataProfileUser, {addPost, updateStatusThunk, getStatusThunk}), withRouter) (ProfileUserContainer)

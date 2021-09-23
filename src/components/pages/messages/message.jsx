@@ -1,10 +1,8 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 import UserNickName from './Contact/contact';
 import PropsMessage from './MessageInfo/propsMessage';
 import './styleMass.css'
-
-
-
 
 
 const Messages = (props) => {
@@ -12,32 +10,39 @@ const Messages = (props) => {
     let dialogMap = props.state.dialogData.map(el => <UserNickName key={el.id} name={el.name} id={el.id} />);
     let messageMap = props.state.messageData.map(el => <PropsMessage key={el.id} messageThisUser={el.message} id={el.id} />);
     
-    let changeText = (e) => {
-        let text = e.target.value;
-        props.changeTextContainer(text) 
-        console.log(text)
-    }
-    let clickSubValue = () => {
-        props.clickSubValueContainer()
-    }
+    let addNewMessage = (values) => {
+        return props.clickSubValueContainer(values.newMessageBody)
+        }
+
 
     return (
-        <div className="boxContact" onClick={() => {
-            console.log(props)
-          }}> 
+        <div className="boxContact"> 
             <div className="boxInfo">
                 {dialogMap}
             </div>
             <div className="boxInfoCont">
                 {messageMap}
                <div className="boxNewMessage"> 
-               <textarea className="textariaMessages" placeholder="new message" value={props.state.updateMessage} rows="1" onChange={changeText} />
-               <input className="submitMassage" type="submit" value="ok" onClick={clickSubValue}  />
+               <ReduxAddMessagesForm onSubmit={addNewMessage} />
                </div>
             </div>
         </div>
     )
 };
+
+const AddMessagesForm = (props) => {
+    return  <form onSubmit={props.handleSubmit}>       
+                <div>
+                    <Field name="newMessageBody" component="textarea" className="textariaMessages" placeholder="new message" />
+                </div>
+                <div>
+                    <button className="submitMassage"> Ok </button>
+                    </div>
+            </form> 
+}
+
+const ReduxAddMessagesForm = reduxForm({form: "textariaMessages"}) (AddMessagesForm)
+
 
 
 export default Messages
