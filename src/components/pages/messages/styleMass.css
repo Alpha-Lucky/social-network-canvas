@@ -55,19 +55,7 @@
     margin: 0 0 0 15px;
     word-wrap: wrap;
 }
-.submitMassage {
-    border: #bbbbbb 1px solid;
-    border-radius: 9px;
-    background-color: rgb(13, 13, 13);
-    color: #bbbbbb;
-    margin-left: 5px;
-    padding: 13px;
-    width: 90px;
-    font-style: italic;
-    font-size: 15px;
-    font-weight: bold;
 
-}
 .propsName>span>a.active {
     color: rgb(163, 12, 12);
 }

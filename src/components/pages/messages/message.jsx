@@ -1,9 +1,12 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import Textarea from '../../common/FormControls/FormControls';
+import { maxLengthCreating, required } from '../../common/validation/validation';
 import UserNickName from './Contact/contact';
 import PropsMessage from './MessageInfo/propsMessage';
 import './styleMass.css'
 
+const maxLength15 = maxLengthCreating(15)
 
 const Messages = (props) => {
 
@@ -33,10 +36,10 @@ const Messages = (props) => {
 const AddMessagesForm = (props) => {
     return  <form onSubmit={props.handleSubmit}>       
                 <div>
-                    <Field name="newMessageBody" component="textarea" className="textariaMessages" placeholder="new message" />
+                    <Field name="newMessageBody" component={Textarea} className="textariaMessages" placeholder="new message" validate={[required, maxLength15]} />
                 </div>
                 <div>
-                    <button className="submitMassage"> Ok </button>
+                    <button className="submit"> Ok </button>
                     </div>
             </form> 
 }

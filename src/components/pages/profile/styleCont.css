@@ -40,20 +40,17 @@
   padding: 13px;
   overflow: hidden;
 }
+.boxMini__text{
+  max-width: 100%;
+  max-height: 100%;
+  word-wrap: break-word;
+}
 .boxNewPost{
   display: flex;
   width: 100%;
   max-height: 100%;
 }
-.textariaProfile {
-  width: 50vw;
-  border-radius: 9px;
-  background-color: rgb(13, 13, 13);
-  color: #bbbbbb;
-  padding: 13px;
-  word-wrap: wrap;
-}
-.submitProfile {
+/* .submitProfile {
   border-radius: 9px;
   background-color: rgb(13, 13, 13);
   color: #bbbbbb;
@@ -63,7 +60,7 @@
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-}
+} */
 .boxMini img {
   max-width: 50px;
   display: inline;

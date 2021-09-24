@@ -35,6 +35,18 @@ html{background-color: rgb(13, 13, 13);}
   padding: 50px;
 }
 
+.submit {
+  border: #bbbbbb 1px solid;
+  border-radius: 9px;
+  background-color: rgb(13, 13, 13);
+  color: #bbbbbb;
+  margin-left: 5px;
+  padding: 13px;
+  width: 90px;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: bold;
+}
 
 @media screen and (max-width: 750px) {
   .App{
