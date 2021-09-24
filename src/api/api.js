@@ -10,7 +10,13 @@ const instance = axios.create({
 
 export const headerApi = {
     auth() {
-        return instance.get(`auth/me`).then(response => { return response.data })
+        return instance.get(`auth/me`)
+    },
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, { email, password, rememberMe })
+    },
+    loginOut() {
+        return instance.delete(`auth/login`)
     }
 }
 
@@ -38,6 +44,6 @@ export const profileApi = {
         return instance.get(`profile/status/` + userId)
     },
     updateStatus(status) {
-        return instance.put(`profile/status`, {status: status})
+        return instance.put(`profile/status`, { status: status })
     },
 }
