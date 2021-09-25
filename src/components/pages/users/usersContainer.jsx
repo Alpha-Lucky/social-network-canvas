@@ -20,7 +20,7 @@ class UsersComponent extends React.Component {
 
   render() {
     return <>
-      {this.props.isFethining ? <Preloader /> : null}
+      {this.props.isFethining ? <Preloader /> : 
       <Users
         totalUsersCount={this.props.totalUsersCount}
         pageSize={this.props.pageSize}
@@ -30,7 +30,7 @@ class UsersComponent extends React.Component {
         unfollow={this.props.unfollow}
         follow={this.props.follow}
         followingInProgres={this.props.followingInProgres}
-      />
+      /> }
     </>
   }
 }

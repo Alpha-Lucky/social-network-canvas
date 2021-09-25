@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './login.module.css'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
@@ -10,7 +11,6 @@ let maxLength30 = maxLengthCreating(30)
 
 
 const LoginForm = (props) => {
-    
     return  <form onSubmit={props.handleSubmit}>
             <div>
                 <Field placeholder="login" name="email" component={Input} validate={[required, maxLength30]} />
@@ -18,6 +18,9 @@ const LoginForm = (props) => {
             <div>
                 <Field placeholder="password" name="password" component={Input} type="password"  validate={[required, maxLength30]}  />
             </div>
+            {props.error && <div className={styles.formError}>
+                <span>{props.error}</span>
+            </div>}
             <div>
                 <Field component={Checked} name='rememberMe' type="checkbox" />
             </div>
