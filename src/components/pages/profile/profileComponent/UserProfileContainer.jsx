@@ -8,10 +8,14 @@ import ProfileUser from './ProfileUser';
 
 
 class ProfileUserContainer extends React.Component {
-    /* 19705 */
     componentDidMount() {
         let userId = this.props.match.params.userId; 
-        if (!userId) {userId = this.props.authUserId}
+        if (!userId) {
+            userId = this.props.authUserId
+/*             if (!userId){
+                this.props.history.push("/Login")
+            } */
+        }
         this.props.getStatusThunk(userId)
         this.props.updateStatusThunk(userId)
     }

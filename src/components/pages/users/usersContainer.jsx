@@ -4,7 +4,6 @@ import { follow, getUsersThunk, setCurrentPage, toogleFollowingProgres, unfollow
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
 import { compose } from 'redux';
-import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 
 
 
@@ -48,5 +47,4 @@ let stateDataFriends = (state) => {
 
 
 export default compose(
-  withAuthRedirect,
   connect(stateDataFriends, { follow, unfollow, setCurrentPage, toogleFollowingProgres, getUsersThunk })) (UsersComponent)

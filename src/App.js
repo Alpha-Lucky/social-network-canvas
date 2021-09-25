@@ -10,12 +10,21 @@ import ProfileContainer from './components/pages/profile/ProfileContainer';
 import SidebarContainer from './components/sidebar/SidebarContainer';
 import UsersContainer from './components/pages/users/usersContainer';
 import HeaderContainer from './components/header/HeaderContainer';
+import { compose } from 'redux';
+import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
+import { initializeApp } from './redux/appReducer';
+import Preloader from './components/common/Preloader/Preloader';
 
 
+class App extends React.Component{
 
-
-
-function App(props) {
+  componentDidMount() {
+    this.props.initializeApp()
+  }
+ 
+ render() {
+  if(!this.props.initialized){return <Preloader />}
   return (
     <div className="App" >
       <div className="Header">
@@ -38,5 +47,12 @@ function App(props) {
       </div>
   );
 }
+}
 
-export default App;
+let mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+
+export default compose(
+  withRouter,
+  connect(mapStateToProps, {initializeApp })) (App)
