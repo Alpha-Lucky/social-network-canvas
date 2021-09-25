@@ -36,6 +36,7 @@ class App extends React.Component{
       </div>
       <div className="Content">
             <div className="contentConteiner">
+            <Route exact path='/' component={ProfileContainer} />
             <Route path='/Profile/:userId?' render={ () => <ProfileContainer />} />
             <Route path='/Messages' render={ () => <MessagesContainer />} />
             <Route path='/Login' component={Login} />

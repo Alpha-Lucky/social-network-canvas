@@ -4,6 +4,7 @@ import './sidebar.css'
 
 
 let Sidebar = (props) => {
+  debugger
     return(
      <div className="sidebarComponent">
             {props.state.SidebarData.map((item, index) => {

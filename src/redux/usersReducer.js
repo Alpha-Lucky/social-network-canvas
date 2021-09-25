@@ -84,6 +84,7 @@ export const toogleFollowingProgres = (userId, following) => ({ type: FOLOWING_I
 export const getUsersThunk = (currentPage, pageSize) => {
   return (dispatch) => {
     dispatch(toogleIsFething(true))
+    dispatch(setCurrentPage(currentPage))
     usersApi.getUsers(currentPage, pageSize).then(data => {
       dispatch(toogleIsFething(false))
       dispatch(setUsers(data.items))

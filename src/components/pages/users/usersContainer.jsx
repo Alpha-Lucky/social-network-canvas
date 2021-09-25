@@ -4,6 +4,7 @@ import { follow, getUsersThunk, setCurrentPage, toogleFollowingProgres, unfollow
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
 import { compose } from 'redux';
+import { getCurrentPage, getFollowingInProgres, getIsFethining, getPagePageSize, getTotalUsersCount, getUsers } from '../../../redux/usersSelecrtors';
 
 
 
@@ -36,12 +37,12 @@ class UsersComponent extends React.Component {
 
 let stateDataFriends = (state) => {
   return {
-    users: state.usersPage.users,
-    pageSize: state.usersPage.pageSize,
-    totalUsersCount: state.usersPage.totalUsersCount,
-    currentPage: state.usersPage.currentPage,
-    isFethining: state.usersPage.isFethining,
-    followingInProgres: state.usersPage.followingInProgres
+    users: getUsers(state),
+    pageSize: getPagePageSize(state),
+    totalUsersCount: getTotalUsersCount(state),
+    currentPage: getCurrentPage(state),
+    isFethining: getIsFethining(state),
+    followingInProgres: getFollowingInProgres(state)
   }
 }
 

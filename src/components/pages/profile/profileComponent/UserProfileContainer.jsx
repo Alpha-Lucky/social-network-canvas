@@ -27,7 +27,6 @@ class ProfileUserContainer extends React.Component {
 
 let stateDataProfileUser = (state) => {
     return {
-        updateText: state.profilePage.updateTextPost,
         profile: state.profilePage.profile,
         status: state.profilePage.status,
         authUserId: state.auth.userId,
