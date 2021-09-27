@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { compose } from 'redux';
@@ -7,7 +7,13 @@ import { addPost, getStatusThunk, updateStatusThunk } from '../../../../redux/pr
 import ProfileUser from './ProfileUser';
 
 
-class ProfileUserContainer extends React.Component {
+class ProfileUserContainer extends PureComponent {
+
+    
+/*     shouldComponentUpdate(nextProps, nextState) {
+        return nextProps !== this.props || nextState !== this.state
+    } */
+    
     componentDidMount() {
         let userId = this.props.match.params.userId; 
         if (!userId) {
