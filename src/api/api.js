@@ -33,6 +33,9 @@ export const usersApi = {
     },
     follow(id = 19705) {
         return instance.post(`follow/${id}`)
+    },
+    getUsersSideBar() {
+        return instance.get(`users?count=6`).then(response => { return response.data })
     }
 }
 

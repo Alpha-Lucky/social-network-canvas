@@ -25,18 +25,10 @@ export const SidebarData = [
   {
     title: 'News',
     path: '/News',
-    icon: <FaIcons.FaCartPlus />,
-    cName: 'nav-text',
-    cNameSide: 'linkSide',
-    cNameSideLinks:'linkSideDec'
-  },
-  {
-    title: 'Login',
-    path: '/login',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text',
     cNameSide: 'linkSide',
-    cNameSideLinks: 'linkSideDec'
+    cNameSideLinks:'linkSideDec'
   },
   {
     title: 'Setting',
@@ -53,7 +45,14 @@ export const SidebarData = [
     cName: 'nav-text',
     cNameSide: 'linkSide',
     cNameSideLinks: 'linkSideDec'
-    
+    },
+ {
+    title: 'Log in / Log out',
+    path: '/login',
+    cName: 'nav-text',
+    cNameSide: 'linkSide',
+    cNameSideLinks: 'linkSideDec'
   }
+  
 
 ];

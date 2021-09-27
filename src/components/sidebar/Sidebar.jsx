@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
 import './sidebar.css'
-
+import avaDefolt from '../img/avaDefolt.jpg'
 
 let Sidebar = (props) => {
-    return(
+  debugger  
+  return(
      <div className="sidebarComponent">
             {props.state.SidebarData.map((item, index) => {
               return (
@@ -17,14 +18,16 @@ let Sidebar = (props) => {
               );
             })}
         
-        <Link to='/Friends' className="frends" >
-        {props.state.users.map((item, index) => {
+        <Link to='/Friends' >
+          <div className="frends">
+        {props.state.users.map((item) => {
               return (
-                <div key={index} className={item.classes}>
-                  <img alt={item.name} src={item.urlImg} />
+                <div key={item.id} className="itemSide">
+                  <img alt={item.id} src={item.photos.small != null ? item.photos.small :  avaDefolt } />
                 </div>
               );
             })}
+            </div>
         </Link>
      </div>
     )
