@@ -42,28 +42,20 @@ export const addPost = (newPostBody) => ({ type: ADD_POST, newPostBody })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 export const setStatus = (status) => ({ type: SET_USER_STATUS, status })
 
-export const profileThunk = (userId) => {
-    return (dispatch) => {
-        profileApi.profile(userId).then(response => {
-            dispatch(setUserProfile(response.data))
-        })
+export const profileThunk = (userId) => async (dispatch) => {
+        let response = await profileApi.profile(userId)
+        dispatch(setUserProfile(response.data))
     }
-}
 
-export const getStatusThunk = (userId) => {
-    return (dispatch) => {
-        profileApi.getStatus(userId).then(response => {
+
+export const getStatusThunk = (userId) => async (dispatch) => {
+        let response = await profileApi.getStatus(userId)
             dispatch(setStatus(response.data))
-        })
-    }
 }
 
-export const updateStatusThunk = (status) => {
-    return (dispatch) => {
-        profileApi.updateStatus(status).then(response => {
+export const updateStatusThunk = (status) => async (dispatch) => {
+        let response = await profileApi.updateStatus(status)
             if(response.data.resultCode === 0) {  dispatch(setStatus(status))}
-        })
-    }
 }
 
 export default profileReducer

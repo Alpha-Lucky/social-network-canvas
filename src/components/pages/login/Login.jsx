@@ -4,30 +4,25 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { loginThunk } from '../../../redux/authReducer';
-import { Checked, Input } from '../../common/FormControls/FormControls';
-import { maxLengthCreating, required } from '../../common/validation/validation';
+import { Checked, createField, Input } from '../../common/FormControls/FormControls';
+import { required } from '../../common/validation/validation';
 
-let maxLength30 = maxLengthCreating(30) 
 
 
 const LoginForm = (props) => {
-    return  <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field placeholder="login" name="email" component={Input} validate={[required, maxLength30]} />
-            </div>
-            <div>
-                <Field placeholder="password" name="password" component={Input} type="password"  validate={[required, maxLength30]}  />
-            </div>
-            {props.error && <div className={styles.formError}>
-                <span>{props.error}</span>
-            </div>}
-            <div>
-                <Field component={Checked} name='rememberMe' type="checkbox" />
-            </div>
-            <div>
-                <button className="submit">login</button>
-            </div>
-        </form>
+    return <form onSubmit={props.handleSubmit}>
+        {createField("login", "email", Input, [required], { type: "text" })}
+        {createField("password", "password", Input, [required], { type: "password" })}
+        {props.error && <div className={styles.formError}>
+            <span>{props.error}</span>
+        </div>}
+        <div>
+            <Field component={Checked} name='rememberMe' type="checkbox" />
+        </div>
+        <div>
+            <button className="submit">login</button>
+        </div>
+    </form>
 }
 
 const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
@@ -35,10 +30,10 @@ const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
 const Login = (props) => {
 
     const onSubmit = (formData) => {
-        props.loginThunk(formData.email, formData.password, formData.rememberMe )
+        props.loginThunk(formData.email, formData.password, formData.rememberMe)
     }
 
-    if(props.isAuth){return <Redirect to={"/profile"} />}
+    if (props.isAuth) { return <Redirect to={"/profile"} /> }
 
     return <div>
         <h1>Login</h1>
@@ -52,4 +47,4 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps, {loginThunk}) (Login)
+export default connect(mapStateToProps, { loginThunk })(Login)

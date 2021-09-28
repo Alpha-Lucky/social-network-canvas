@@ -4,7 +4,6 @@ import './sidebar.css'
 import avaDefolt from '../img/avaDefolt.jpg'
 
 let Sidebar = (props) => {
-  debugger  
   return(
      <div className="sidebarComponent">
             {props.state.SidebarData.map((item, index) => {

@@ -7,18 +7,6 @@
     overflow: hidden;
     color: #bbbbbb;
 }
-
-.colorText{
-    color: black;
-    position: absolute;
-    width: 50%;
-    margin-top: -15px;
-    cursor: pointer;
-    overflow: auto;
-}
-.activ__span{color: tomato;}
-
-
 .friendsContainer__eUser{
     background-color: rgba(13,13,13);
     width: 100%;
