@@ -5,16 +5,19 @@ import Login from './components/pages/login/Login';
 import React from 'react';
 import News from './components/pages/news/News';
 import Setting from './components/pages/sitting/Setting';
-import MessagesContainer from './components/pages/messages/messageContainer';
-import ProfileContainer from './components/pages/profile/ProfileContainer';
 import SidebarContainer from './components/sidebar/SidebarContainer';
-import UsersContainer from './components/pages/users/usersContainer';
 import HeaderContainer from './components/header/HeaderContainer';
 import { compose } from 'redux';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { initializeApp } from './redux/appReducer';
 import Preloader from './components/common/Preloader/Preloader';
+import ProfileContainer from './components/pages/profile/ProfileContainer';
+import { withSuspense } from './hoc/withSuspense';
+
+const MessagesContainer = React.lazy(() => import('./components/pages/messages/messageContainer'));
+const UsersContainer = React.lazy(() => import('./components/pages/users/usersContainer'));
+
 
 
 class App extends React.Component{
@@ -37,12 +40,13 @@ class App extends React.Component{
       <div className="Content">
             <div className="contentConteiner">
             <Route exact path='/' component={ProfileContainer} />
-            <Route path='/Profile/:userId?' render={ () => <ProfileContainer />} />
-            <Route path='/Messages' render={ () => <MessagesContainer />} />
+            <Route path='/Profile/:userId?' render={ () => <ProfileContainer /> } />
+            <Route path='/Messages'  render={withSuspense(MessagesContainer)} />
             <Route path='/Login' component={Login} />
             <Route path='/News' component={News} />
             <Route path='/Setting' component={Setting} />
-            <Route path='/Friends' render={ () => <UsersContainer />} />
+
+            <Route path='/Friends' render={withSuspense(UsersContainer)} />
             </div>
         </div>
       </div>

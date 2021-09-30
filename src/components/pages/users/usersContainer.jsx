@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { follow, getUsersThunk, setCurrentPage, toogleFollowingProgres, unfollow } from '../../../redux/usersReducer';
 import Users from './Users';
-import Preloader from '../../common/Preloader/Preloader';
 import { compose } from 'redux';
 import { getCurrentPage, getFollowingInProgres, getIsFethining, getPagePageSize, getTotalUsersCount, getUsers } from '../../../redux/usersSelecrtors';
+import Preloader from '../../common/Preloader/Preloader';
+import Paginition from '../../common/Paginition/Paginition';
 
 
 
@@ -20,7 +21,13 @@ class UsersComponent extends React.Component {
 
   render() {
     return <>
-      {this.props.isFethining ? <Preloader /> : 
+    <Paginition
+        currentPage={this.props.currentPage}
+        onPageChange={this.onPageChange}
+        totalUsersCount={this.props.totalUsersCount}
+        pageSize={this.props.pageSize}
+                       {...this.props} />
+            {this.props.isFethining ? <Preloader/> : 
       <Users
         totalUsersCount={this.props.totalUsersCount}
         pageSize={this.props.pageSize}

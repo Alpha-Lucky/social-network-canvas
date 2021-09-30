@@ -1,11 +1,16 @@
 .colorText{
   color: black;
-  position: absolute;
-  width: 50%;
-  margin-top: -15px;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  max-width: 500px;
   cursor: pointer;
-  overflow: auto;
+  overflow:auto;
 }
 .activ__span{color: tomato;}
+
+
+
 
 
