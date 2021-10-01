@@ -14,7 +14,7 @@ let i = {
   users: [
 
   ],
-  pageSize: 5,
+  pageSize: 6,
   totalUsersCount: 1,
   currentPage: 1,
   isFethining: true,
