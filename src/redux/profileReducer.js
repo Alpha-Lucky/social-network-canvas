@@ -3,6 +3,7 @@ import { profileApi } from "../api/api"
 const ADD_POST = 'ADD-POST'
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
 const SET_USER_STATUS = 'SET_USER_STATUS'
+const SET_USER_PHOTO = 'SET_USER_PHOTO'
 
 
 let i = {
@@ -29,7 +30,11 @@ const profileReducer = (state = i, action) => {
             return { ...state, profile: action.profile }
         }
         case SET_USER_STATUS: {
+            
             return { ...state, status: action.status }
+        }
+        case SET_USER_PHOTO: {
+            return { ...state, profile: {...state.profile, photos: action.photos} }
         }
         default: {
             return state
@@ -40,7 +45,9 @@ const profileReducer = (state = i, action) => {
 
 export const addPost = (newPostBody) => ({ type: ADD_POST, newPostBody })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
-export const setStatus = (status) => ({ type: SET_USER_STATUS, status })
+export const setStatus = (status) => ({  type: SET_USER_STATUS, status })
+export const setPhoto = (photos) => ({ type: SET_USER_PHOTO, photos })
+
 
 export const profileThunk = (userId) => async (dispatch) => {
         let response = await profileApi.profile(userId)
@@ -56,6 +63,11 @@ export const getStatusThunk = (userId) => async (dispatch) => {
 export const updateStatusThunk = (status) => async (dispatch) => {
         let response = await profileApi.updateStatus(status)
             if(response.data.resultCode === 0) {  dispatch(setStatus(status))}
+}
+
+export const savePhotoThunk = (photos) => async (dispatch) => {
+    let response = await profileApi.savePhoto(photos)
+        if(response.data.resultCode === 0) {  dispatch(setPhoto(response.data.data.photos))}
 }
 
 export default profileReducer

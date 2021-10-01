@@ -14,6 +14,7 @@ import { initializeApp } from './redux/appReducer';
 import Preloader from './components/common/Preloader/Preloader';
 import ProfileContainer from './components/pages/profile/ProfileContainer';
 import { withSuspense } from './hoc/withSuspense';
+import ScrollToTop from './components/common/ScrollToTop';
 
 const MessagesContainer = React.lazy(() => import('./components/pages/messages/messageContainer'));
 const UsersContainer = React.lazy(() => import('./components/pages/users/usersContainer'));
@@ -39,6 +40,7 @@ class App extends React.Component{
       </div>
       <div className="Content">
             <div className="contentConteiner">
+            <ScrollToTop />
             <Route exact path='/' component={ProfileContainer} />
             <Route path='/Profile/:userId?' render={ () => <ProfileContainer /> } />
             <Route path='/Messages'  render={withSuspense(MessagesContainer)} />

@@ -30,7 +30,7 @@ const ProfileUser = (props) => {
 
     return (
         <div className="glavCont" >
-            <ProfileInfo profile={props.profile} status={props.status} updateStatusThunk={props.updateStatusThunk} />
+            <ProfileInfo savePhotoThunk={props.savePhotoThunk} isOwner={props.isOwner} profile={props.profile} status={props.status} updateStatusThunk={props.updateStatusThunk} />
             <div>
                 <div className="boxNewPost">
 

@@ -1,0 +1,40 @@
+.box__profile_info {
+    max-width: 700px;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(150px, 170px) 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "ava aboutMe";
+    border-radius: 15px;
+    background-color: rgb(13, 13, 13);
+    color: #bbbbbb;
+    margin-bottom: 30px;
+}
+.box__profile_ava{
+    grid-area: ava;
+    max-width: 150px;
+}
+.box__profile_ava img{
+    border:#bbbbbb 3px double ;
+}
+.box__profile_aboutMe{
+
+    text-align: right;
+    grid-area: aboutMe;
+}
+.box__profile_dow_img{
+    max-width: 302px;
+}
+
+
+@media screen and (max-width:750px) {
+    .box__profile_info {
+        grid-template-areas: 
+        "ava ava"
+        "aboutMe aboutMe";
+    }
+    .box__profile_aboutMe{
+        text-align: left;
+    }
+}
