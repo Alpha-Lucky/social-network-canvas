@@ -1,7 +1,20 @@
 .descriptionBlock {
+    max-width: 500px;
+    height: auto;
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
+    background-color:rgb(13, 13, 13);
+    color: #bbbbbb;
+    border-radius: 30px;
 }
-
-.mainPhoto {
-    max-width: 200px;
+.mainPhoto{
+    max-width: 170px;
 }
+.mainPhoto img {
+    border: 5px #bbbbbb double;
+    max-width: 150px;
+    border-radius: 50%;
+}
+.status__profile_info{color:#D1BC8A }

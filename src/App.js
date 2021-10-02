@@ -12,6 +12,7 @@ import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
 import {withSuspense} from "./hoc/withSuspense";
+import NavbarMoble from './components/navBarMoble/NavbarMoble';
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
@@ -30,8 +31,15 @@ class App extends Component {
 
         return (
                     <div className='app-wrapper'>
+                        <div className='header'>
                         <HeaderContainer/>
-                        <Navbar/>
+                        </div>
+                        <div className='navBar'>
+                        <Navbar />
+                        <NavbarMoble />
+
+                        </div>
+
                         <div className='app-wrapper-content'>
                             <Route path='/dialogs'
                                    render={withSuspense(DialogsContainer)}/>

@@ -13,8 +13,8 @@ let AddNewPostForm = (props) => {
             <Field name="newPostText" component={Textarea} placeholder={"Post message"}
                    validate={[required, maxLength10]} />
         </div>
-        <div>
-            <button>Add post</button>
+        <div className={s.submit__profile__myposts}>
+            <button className="submit">Add post</button>
         </div>
     </form>;
 }
@@ -25,7 +25,7 @@ const MyPosts = React.memo(props => {
     let postsElements =
         [...props.posts]
             .reverse()
-            .map(p => <Post message={p.message} likesCount={p.likesCount}/>);
+            .map(p => <Post  message={p.message} likesCount={p.likesCount}/>);
 
     let newPostElement = React.createRef();
 

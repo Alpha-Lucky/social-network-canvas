@@ -9,7 +9,7 @@ const AddPostForm = (props) => {
                     <Field component={"textarea"} name="postText"/>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button className="submit">Add post</button>
                 </div>
             </form>
     )

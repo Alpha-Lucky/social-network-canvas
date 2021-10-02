@@ -1,3 +1,13 @@
+.formControl {
+    margin-left: 30px;
+}
+
+.textarea, .input{
+    background-color: rgb(13, 13, 13);
+    color: #bbbbbb;
+    border-radius: 7px;
+}
+
 .formControl.error input,
 .formControl.error textarea
 {

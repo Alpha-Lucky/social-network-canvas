@@ -1,13 +1,20 @@
 
-.paginator {
-    margin: 10px;
+.container__paginator {
+    width: 100%;
+    max-height: 300px;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
 }
 .pageNumber {
-    padding: 2px;
-    border: 1px solid grey;
+    cursor: pointer;
+    padding: 5px;
 }
 
 .pageNumber.selectedPage {
     font-weight: bold;
-    border-color: black;
+    color:#D1BC8A;
 }
+

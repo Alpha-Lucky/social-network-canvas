@@ -1,17 +1,16 @@
 .header {
-    grid-area: h;
+    height: 100%;
     background-color: rgb(13, 13, 13);
+    color: #bbbbbb;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
-
-.header img {
-    width: 20px;
-}
-
-.loginBlock {
-    float: right;
-
+.loginBlock{
+    margin-right: 15px;
 }
 .loginBlock a {
-    color: white;
+    color: #bbbbbb;
 }
 

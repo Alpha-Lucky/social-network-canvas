@@ -1,6 +1,51 @@
 .userPhoto {
-     width: 100px;
+    border-radius: 50%;
+    width: 100px;
     height: 100px;
 }
+.container__users{
+    max-width: 900px;
+    margin-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.container__oneUser{
+    padding: 15px;
+    margin: 30px 30px 30px 0;
+    width: 300px;
+    max-height: 100%;
+    border-radius: 15px;
+    background-color: rgb(13, 13, 13);
+    color: #bbbbbb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
+}
+.box_ava{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 41%;
+    max-height: 100%;
+}
+.box_ava img{
+    border: 5px double #bbbbbb;
+}
+.box_description{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    text-align: right;
+    width: 59%;
+    max-height: 100%;
+}
+.description__username, .description__status {
+    margin: 5px;
+    width: 100%;
+    height: auto;
+}
+.span__status{
+    color:#D1BC8A;
+}
