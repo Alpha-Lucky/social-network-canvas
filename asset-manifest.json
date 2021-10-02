@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/social-network-canvas.github.io/static/css/main.d191c26f.chunk.css",
-    "main.js": "/social-network-canvas.github.io/static/js/main.9e505a13.chunk.js",
-    "main.js.map": "/social-network-canvas.github.io/static/js/main.9e505a13.chunk.js.map",
-    "runtime-main.js": "/social-network-canvas.github.io/static/js/runtime-main.752ab54a.js",
-    "runtime-main.js.map": "/social-network-canvas.github.io/static/js/runtime-main.752ab54a.js.map",
-    "static/js/2.7b117e6f.chunk.js": "/social-network-canvas.github.io/static/js/2.7b117e6f.chunk.js",
-    "static/js/2.7b117e6f.chunk.js.map": "/social-network-canvas.github.io/static/js/2.7b117e6f.chunk.js.map",
+    "main.css": "/social-network-canvas.github.io/static/css/main.201fd86f.chunk.css",
+    "main.js": "/social-network-canvas.github.io/static/js/main.601c4e31.chunk.js",
+    "main.js.map": "/social-network-canvas.github.io/static/js/main.601c4e31.chunk.js.map",
+    "runtime-main.js": "/social-network-canvas.github.io/static/js/runtime-main.3fd257ca.js",
+    "runtime-main.js.map": "/social-network-canvas.github.io/static/js/runtime-main.3fd257ca.js.map",
+    "static/js/2.b569c26a.chunk.js": "/social-network-canvas.github.io/static/js/2.b569c26a.chunk.js",
+    "static/js/2.b569c26a.chunk.js.map": "/social-network-canvas.github.io/static/js/2.b569c26a.chunk.js.map",
     "static/css/3.e1d2af7b.chunk.css": "/social-network-canvas.github.io/static/css/3.e1d2af7b.chunk.css",
-    "static/js/3.b7fca77c.chunk.js": "/social-network-canvas.github.io/static/js/3.b7fca77c.chunk.js",
-    "static/js/3.b7fca77c.chunk.js.map": "/social-network-canvas.github.io/static/js/3.b7fca77c.chunk.js.map",
+    "static/js/3.8ed18781.chunk.js": "/social-network-canvas.github.io/static/js/3.8ed18781.chunk.js",
+    "static/js/3.8ed18781.chunk.js.map": "/social-network-canvas.github.io/static/js/3.8ed18781.chunk.js.map",
     "static/css/4.a7c75bc9.chunk.css": "/social-network-canvas.github.io/static/css/4.a7c75bc9.chunk.css",
-    "static/js/4.7fca12f6.chunk.js": "/social-network-canvas.github.io/static/js/4.7fca12f6.chunk.js",
-    "static/js/4.7fca12f6.chunk.js.map": "/social-network-canvas.github.io/static/js/4.7fca12f6.chunk.js.map",
+    "static/js/4.7e339405.chunk.js": "/social-network-canvas.github.io/static/js/4.7e339405.chunk.js",
+    "static/js/4.7e339405.chunk.js.map": "/social-network-canvas.github.io/static/js/4.7e339405.chunk.js.map",
     "index.html": "/social-network-canvas.github.io/index.html",
     "static/css/3.e1d2af7b.chunk.css.map": "/social-network-canvas.github.io/static/css/3.e1d2af7b.chunk.css.map",
     "static/css/4.a7c75bc9.chunk.css.map": "/social-network-canvas.github.io/static/css/4.a7c75bc9.chunk.css.map",
-    "static/css/main.d191c26f.chunk.css.map": "/social-network-canvas.github.io/static/css/main.d191c26f.chunk.css.map",
-    "static/js/2.7b117e6f.chunk.js.LICENSE.txt": "/social-network-canvas.github.io/static/js/2.7b117e6f.chunk.js.LICENSE.txt",
+    "static/css/main.201fd86f.chunk.css.map": "/social-network-canvas.github.io/static/css/main.201fd86f.chunk.css.map",
+    "static/js/2.b569c26a.chunk.js.LICENSE.txt": "/social-network-canvas.github.io/static/js/2.b569c26a.chunk.js.LICENSE.txt",
     "static/media/user.png": "/social-network-canvas.github.io/static/media/user.96e310a6.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.752ab54a.js",
-    "static/js/2.7b117e6f.chunk.js",
-    "static/css/main.d191c26f.chunk.css",
-    "static/js/main.9e505a13.chunk.js"
+    "static/js/runtime-main.3fd257ca.js",
+    "static/js/2.b569c26a.chunk.js",
+    "static/css/main.201fd86f.chunk.css",
+    "static/js/main.601c4e31.chunk.js"
   ]
 }
