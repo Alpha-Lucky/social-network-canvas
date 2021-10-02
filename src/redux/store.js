@@ -1,63 +1,60 @@
-import profileReducer from "./profileReducer"
-import messagesReducer from "./messagesReducer"
-import sideBarReducer from "./sideBarReducer"
-
-
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
 
 let store = {
-  _state: {
-    profilePage: {
-      postMessage: [
-        { post: 'it`s my first post', id: 1, like: 13 },
-        { post: 'I`m happy', id: 2, like: 123 },
-        { post: 'How are you? i`m fine', id: 3, like: 23 }
-      ],
-      updateTextPost: ''
+    _state: {
+        profilePage: {
+            posts: [
+                {id: 1, message: 'Hi, how are you?', likesCount: 12},
+                {id: 2, message: 'It\'s my first post', likesCount: 11},
+                {id: 3, message: 'Blabla', likesCount: 11},
+                {id: 4, message: 'Dada', likesCount: 11}
+            ],
+            newPostText: 'it-kamasutra.com'
+        },
+        dialogsPage: {
+            dialogs: [
+                {id: 1, name: 'Dimych'},
+                {id: 2, name: 'Andrew'},
+                {id: 3, name: 'Sveta'},
+                {id: 4, name: 'Sasha'},
+                {id: 5, name: 'Viktor'},
+                {id: 6, name: 'Valera'}
+            ],
+            messages: [
+                {id: 1, message: 'Hi'},
+                {id: 2, message: 'How is your it-kamasutra?'},
+                {id: 3, message: 'Yo'},
+                {id: 4, message: 'Yo'},
+                {id: 5, message: 'Yo'}
+            ],
+            newMessageBody: ""
+        },
+        sidebar: {}
     },
-    messagesPage: {
-      dialogData: [
-        { name: 'Michael', id: 1 },
-        { name: 'Alex', id: 2 },
-        { name: 'Angela', id: 3 },
-        { name: 'Alisa', id: 4 },
-        { name: 'Helena', id: 5 }
-      ],
-      messageData: [
-        { message: 'Hi', id: 1 },
-        { message: 'What did you yestuday?', id: 2 },
-        { message: 'How are you?', id: 3 },
-        { message: 'Go walk!', id: 4 },
-        { message: 'Heooo', id: 5 },
-        { message: 'So eazy, i`m leaning fery fast!', id: 6 }
-      ],
-      updateMessage: ''
+    _callSubscriber() {
+        console.log('State changed');
     },
-    sideBar: {
-      friends: [
-        { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Michael', id: 1 },
-        { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Alex', id: 2 },
-        { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Angela', id: 3 },
-        { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Alisa', id: 4 },
-        { urlImg: "https://www.blast.hk/attachments/74778/", classes: 'itemSide', classesFriends: 'itemFriends', name: 'Helena', id: 5 }
-      ]
+
+    getState() {
+        debugger;
+        return this._state;
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer;  // observer
+    },
+
+    dispatch(action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+        this._callSubscriber(this._state);
     }
-  },
-  getState() {
-    return this._state
-  },
-  _callSubscribe() {
-    console.log('state changed')
-  },
-  dispatch(action) {
-    this._state.profilePage = profileReducer(this._state.profilePage, action)
-    this._state.messagesPage = messagesReducer(this._state. messagesPage, action)
-    this._state.sideBar = sideBarReducer(this._state.sideBar, action)
-    this._callSubscribe(this._state)
-  
-  },
-  subscribe(observer) {
-    this._callSubscribe = observer
-  }
 }
 
-export default store
+
+export default store;
+window.store = store;
+// store - OOP

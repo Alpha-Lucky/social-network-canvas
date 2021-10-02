@@ -1,66 +1,19 @@
-html{background-color: rgb(13, 13, 13);}
-.App{
-  background-color: rgb(13, 13, 13);
-  height: 100vh;
-  width: 100%;
-  display: grid;
-  grid-template-columns: minmax(150px, 170px) 10fr;
-  grid-template-rows: 0 1fr;
-  grid-template-areas: 
-  "header header"
-  "sidebar content"
-}
-.Header {
-  z-index: 1000;
-  grid-area: header;
-}
-.Sidebar {
-  grid-area: sidebar;
-  position: sticky;
-  top: 0;
-  max-width: 300px;
-  color: aliceblue;
-}
-.Content{
-  grid-area: content;
-  margin-top: 100px;
-  padding-top: 1em;
-  width: 100%;
-  height: 100%;
-  background-color: #bbbbbb;
-  border-radius: 15px;
-
-}
-.contentConteiner {
-  padding: 50px;
+.app-wrapper {
+    margin: 0 auto;
+    display: grid;
+    width: 100%;
+    grid-template-areas: "h h" "n c";
+    grid-template-rows: 70px 13fr;
+    grid-template-columns: 1fr 10fr;
 }
 
-.submit {
-  border: #bbbbbb 1px solid;
-  border-radius: 9px;
-  background-color: rgb(13, 13, 13);
-  color: #bbbbbb;
-  margin-left: 5px;
-  padding: 13px;
-  width: 90px;
-  font-style: italic;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 750px) {
-  .App{
-
-    grid-template-areas: 
-    "header header"
-    "content content"
-  }
-  .Sidebar{display: none;}
-  .contentConteiner {
-      padding: 5px;
-  }
-
-
+.app-wrapper-content {
+    border: rosybrown 3px solid;
+    border-radius: 15px;
+    min-height: 100vh;
+    max-width: 100%;
+    grid-area: c;
+    background-color: #bbbbbb;
+    color: rgb(13, 13, 13);
 }
 
