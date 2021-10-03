@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/social-network-canvas.github.io/static/css/main.57256456.chunk.css",
-    "main.js": "/social-network-canvas.github.io/static/js/main.9b50a4fa.chunk.js",
-    "main.js.map": "/social-network-canvas.github.io/static/js/main.9b50a4fa.chunk.js.map",
-    "runtime-main.js": "/social-network-canvas.github.io/static/js/runtime-main.7e0273b2.js",
-    "runtime-main.js.map": "/social-network-canvas.github.io/static/js/runtime-main.7e0273b2.js.map",
-    "static/js/2.1e3338b4.chunk.js": "/social-network-canvas.github.io/static/js/2.1e3338b4.chunk.js",
-    "static/js/2.1e3338b4.chunk.js.map": "/social-network-canvas.github.io/static/js/2.1e3338b4.chunk.js.map",
-    "static/css/3.2a7fdb2b.chunk.css": "/social-network-canvas.github.io/static/css/3.2a7fdb2b.chunk.css",
-    "static/js/3.6635db9f.chunk.js": "/social-network-canvas.github.io/static/js/3.6635db9f.chunk.js",
-    "static/js/3.6635db9f.chunk.js.map": "/social-network-canvas.github.io/static/js/3.6635db9f.chunk.js.map",
-    "static/css/4.e4496399.chunk.css": "/social-network-canvas.github.io/static/css/4.e4496399.chunk.css",
-    "static/js/4.c0e36ff3.chunk.js": "/social-network-canvas.github.io/static/js/4.c0e36ff3.chunk.js",
-    "static/js/4.c0e36ff3.chunk.js.map": "/social-network-canvas.github.io/static/js/4.c0e36ff3.chunk.js.map",
+    "main.css": "/social-network-canvas.github.io/static/css/main.583e4ef9.chunk.css",
+    "main.js": "/social-network-canvas.github.io/static/js/main.667e4aea.chunk.js",
+    "main.js.map": "/social-network-canvas.github.io/static/js/main.667e4aea.chunk.js.map",
+    "runtime-main.js": "/social-network-canvas.github.io/static/js/runtime-main.f55f76c1.js",
+    "runtime-main.js.map": "/social-network-canvas.github.io/static/js/runtime-main.f55f76c1.js.map",
+    "static/js/2.166c3cef.chunk.js": "/social-network-canvas.github.io/static/js/2.166c3cef.chunk.js",
+    "static/js/2.166c3cef.chunk.js.map": "/social-network-canvas.github.io/static/js/2.166c3cef.chunk.js.map",
+    "static/css/3.04ce5f19.chunk.css": "/social-network-canvas.github.io/static/css/3.04ce5f19.chunk.css",
+    "static/js/3.7c707975.chunk.js": "/social-network-canvas.github.io/static/js/3.7c707975.chunk.js",
+    "static/js/3.7c707975.chunk.js.map": "/social-network-canvas.github.io/static/js/3.7c707975.chunk.js.map",
+    "static/css/4.20bb8290.chunk.css": "/social-network-canvas.github.io/static/css/4.20bb8290.chunk.css",
+    "static/js/4.5667f84a.chunk.js": "/social-network-canvas.github.io/static/js/4.5667f84a.chunk.js",
+    "static/js/4.5667f84a.chunk.js.map": "/social-network-canvas.github.io/static/js/4.5667f84a.chunk.js.map",
     "index.html": "/social-network-canvas.github.io/index.html",
-    "static/css/3.2a7fdb2b.chunk.css.map": "/social-network-canvas.github.io/static/css/3.2a7fdb2b.chunk.css.map",
-    "static/css/4.e4496399.chunk.css.map": "/social-network-canvas.github.io/static/css/4.e4496399.chunk.css.map",
-    "static/css/main.57256456.chunk.css.map": "/social-network-canvas.github.io/static/css/main.57256456.chunk.css.map",
-    "static/js/2.1e3338b4.chunk.js.LICENSE.txt": "/social-network-canvas.github.io/static/js/2.1e3338b4.chunk.js.LICENSE.txt",
-    "static/media/user.png": "/social-network-canvas.github.io/static/media/user.96e310a6.png"
+    "static/css/3.04ce5f19.chunk.css.map": "/social-network-canvas.github.io/static/css/3.04ce5f19.chunk.css.map",
+    "static/css/4.20bb8290.chunk.css.map": "/social-network-canvas.github.io/static/css/4.20bb8290.chunk.css.map",
+    "static/css/main.583e4ef9.chunk.css.map": "/social-network-canvas.github.io/static/css/main.583e4ef9.chunk.css.map",
+    "static/js/2.166c3cef.chunk.js.LICENSE.txt": "/social-network-canvas.github.io/static/js/2.166c3cef.chunk.js.LICENSE.txt",
+    "static/media/user.png": "/social-network-canvas.github.io/static/media/user.94bdfb60.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7e0273b2.js",
-    "static/js/2.1e3338b4.chunk.js",
-    "static/css/main.57256456.chunk.css",
-    "static/js/main.9b50a4fa.chunk.js"
+    "static/js/runtime-main.f55f76c1.js",
+    "static/js/2.166c3cef.chunk.js",
+    "static/css/main.583e4ef9.chunk.css",
+    "static/js/main.667e4aea.chunk.js"
   ]
 }
