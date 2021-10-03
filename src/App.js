@@ -1,17 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import {HashRouter, Route, withRouter} from "react-router-dom";
+import { HashRouter, Route, withRouter } from "react-router-dom";
 
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
-import {connect, Provider} from "react-redux";
-import {compose} from "redux";
-import {initializeApp} from "./redux/app-reducer";
+import { connect, Provider } from "react-redux";
+import { compose } from "redux";
+import { initializeApp } from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
-import {withSuspense} from "./hoc/withSuspense";
+import { withSuspense } from "./hoc/withSuspense";
 import NavbarMoble from './components/navBarMoble/NavbarMoble';
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -31,30 +31,33 @@ class App extends Component {
         }
 
         return (
-                    <div className='app-wrapper'>
-                        <div className='header'>
-                        <HeaderContainer/>
-                        </div>
-                        <div className='navBar'>
-                        <Navbar />
-                        <NavbarMoble />
+            <div className='app-wrapper'>
+                <div className='header'>
+                    <HeaderContainer />
+                </div>
+                <div className='navBar'>
+                    <Navbar />
+                    <NavbarMoble />
 
-                        </div>
-                        <ScrollToTop />
-                        <div className='app-wrapper-content'>
-                            <Route path='/dialogs'
-                                   render={withSuspense(DialogsContainer)}/>
+                </div>
+                <ScrollToTop />
+                <div className='app-wrapper-content'>
 
-                            <Route path='/profile/:userId?'
-                                   render={withSuspense(ProfileContainer)} />
+                    <Route exact path='/' render={withSuspense(ProfileContainer)} />
 
-                            <Route path='/users'
-                                   render={() => <UsersContainer/>}/>
+                    <Route path='/dialogs'
+                        render={withSuspense(DialogsContainer)} />
 
-                            <Route path='/login'
-                                   render={() => <LoginPage/>}/>
-                        </div>
-                    </div>
+                    <Route path='/profile/:userId?'
+                        render={withSuspense(ProfileContainer)} />
+
+                    <Route path='/users'
+                        render={() => <UsersContainer />} />
+
+                    <Route path='/login'
+                        render={() => <LoginPage />} />
+                </div>
+            </div>
         )
     }
 }
@@ -65,10 +68,10 @@ const mapStateToProps = (state) => ({
 
 let AppContainer = compose(
     withRouter,
-    connect(mapStateToProps, {initializeApp}))(App);
+    connect(mapStateToProps, { initializeApp }))(App);
 
 const SamuraiJSApp = (props) => {
-   return <HashRouter >
+    return <HashRouter >
         <Provider store={store}>
             <AppContainer />
         </Provider>
