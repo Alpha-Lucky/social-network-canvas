@@ -18,3 +18,34 @@
     border-radius: 50%;
 }
 .status__profile_info{color:#D1BC8A }
+
+input[type="file"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+.input__down {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #bbbbbb;
+    color:rgb(13, 13, 13);
+    border-radius: 10px;
+    
+  }
+.label__down {
+    display: inline-block;
+    position: relative;
+    height: 30px;
+    width: 150px;
+  }

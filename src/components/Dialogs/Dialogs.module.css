@@ -16,7 +16,11 @@
     padding: 10px;
 }
 
+
 .messages .message {
     color: white;
 }
-
+.dialog__navlink {
+    text-decoration: none;
+    color: rgb(13, 13, 13);
+}

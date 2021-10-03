@@ -1,5 +1,8 @@
 .header {
     height: 100%;
+    background-image: url(../../assets/images/1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
     background-color: rgb(13, 13, 13);
     color: #bbbbbb;
     overflow: hidden;
@@ -14,3 +17,7 @@
     color: #bbbbbb;
 }
 
+@media screen and (max-width: 750px) {
+
+    .header { background-image: none; }
+}

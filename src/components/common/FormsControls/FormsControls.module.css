@@ -6,6 +6,13 @@
     background-color: rgb(13, 13, 13);
     color: #bbbbbb;
     border-radius: 7px;
+}    
+.textarea{
+    width: 250px;
+    height: 75px;
+}
+.input {
+    height: 30px;
 }
 
 .formControl.error input,
