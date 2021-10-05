@@ -27,7 +27,7 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
     }
 
     return (
-        <div className={s.container__profile__thisuser}>
+        <div className={s.container__profile__thisuser + " " + "border__topAndBot"}>
             <div className={s.profile__ava_and_name_and_status}>
                 <div className={s.mainPhoto}>
                     {isOwner 

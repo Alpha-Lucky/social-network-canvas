@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 
 let User = ({user, followingInProgress, unfollow, follow}) => {
     return (
-       <div className={styles.container__oneUser}>
+       <div className={styles.container__oneUser + " " + "border__topAndBot"}>
                     <div className={styles.box_ava}>
                        <NavLink to={'/profile/' + user.id}>
                         <img src={user.photos.small != null ? user.photos.small : userPhoto}

@@ -3,7 +3,7 @@ import s from './Post.module.css';
 
 const Post = (props) => {
   return (
-    <div className={s.item}>
+    <div className={s.item + " " + "border__topAndBot"}>
       <div>
         <span>
           {props.message}
@@ -13,8 +13,7 @@ const Post = (props) => {
         <span className={s.span__heart}>&#10084;</span>
         {props.likesCount}
       </div>
-      <hr />
-    </div>
+      </div>
   )
 }
 

@@ -27,10 +27,11 @@
     color: #bbbbbb;
 }
 .submit, .submit__75px{
-        background-color: #bbbbbb ;
-        color: #6b311a;
-        border-radius: 7px;
-        cursor: pointer;
+    background-color: rgba(0,0,0,0.1);
+    border: 1px solid #d28837;
+    color: #bbbbbb;
+    border-radius: 7px;
+    cursor: pointer;
 }
 .submit__75px{
     width: 75px;
@@ -40,6 +41,8 @@
 .margin__top30{margin-top: 30px;}
 .margin30{margin-left: 30px;}
 .display__flex{display: flex;justify-content: flex-start;align-items: center;}
+.border__topAndBot{border-top: 1px #e7c040 solid;border-bottom: 1px #e7c040 solid ;}
+
 
 @media screen and (max-width: 750px) {
     .app-wrapper{grid-template-areas: "n h" "c c"; grid-template-rows: 70px 1fr;     grid-template-columns: 1fr 10fr;}

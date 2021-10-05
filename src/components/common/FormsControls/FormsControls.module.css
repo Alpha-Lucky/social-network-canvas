@@ -3,7 +3,8 @@
 }
 
 .textarea, .input{
-    background-color: rgb(13, 13, 13);
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid #d28837 ;
     color: #bbbbbb;
     border-radius: 7px;
 }    
