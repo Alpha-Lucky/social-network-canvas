@@ -1,10 +1,9 @@
 .header {
     height: 100%;
-    background-image: url(../../assets/images/1.png);
     background-repeat: no-repeat;
     background-position: center center;
-    background-color: rgb(13, 13, 13);
-    color: #bbbbbb;
+    background-color: #491a0c;
+    color: #f3dcdc;
     overflow: hidden;
     display: flex;
     justify-content: flex-end;
@@ -16,8 +15,20 @@
 .loginBlock a {
     color: #bbbbbb;
 }
+.imgHeader{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.imgHeader img{
+    max-width: 100%;
+    max-height: 110px;
+}
 
 @media screen and (max-width: 750px) {
 
-    .header { background-image: none; }
+    .header {justify-content: space-between; }
+    .imgHeader img{max-height: 83px;}
 }

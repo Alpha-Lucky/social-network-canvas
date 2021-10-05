@@ -8,12 +8,12 @@ const Post = (props) => {
         <span>
           {props.message}
         </span>
-        <hr />
       </div>
       <div>
         <span className={s.span__heart}>&#10084;</span>
         {props.likesCount}
       </div>
+      <hr />
     </div>
   )
 }

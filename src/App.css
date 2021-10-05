@@ -4,7 +4,7 @@
     display: grid;
     width: 100%;
     grid-template-areas: "h h" "n c";
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: 100px 1fr;
     grid-template-columns: minmax(165px, 170px) 10fr;
 }
 .header{
@@ -20,12 +20,15 @@
     height: 100%;
     max-width: 100%;
     grid-area: c;
-    background-color: #bbbbbb;
-    color: rgb(13, 13, 13);
+    background-image: url(./assets/images/2.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #6b311a ;
+    color: #bbbbbb;
 }
 .submit, .submit__75px{
-        background-color: rgb(13, 13, 13);
-        color: #bbbbbb;
+        background-color: #bbbbbb ;
+        color: #6b311a;
         border-radius: 7px;
         cursor: pointer;
 }
@@ -39,5 +42,6 @@
 .display__flex{display: flex;justify-content: flex-start;align-items: center;}
 
 @media screen and (max-width: 750px) {
-    .app-wrapper{grid-template-areas: "n h" "c c";}
+    .app-wrapper{grid-template-areas: "n h" "c c"; grid-template-rows: 70px 1fr;     grid-template-columns: 1fr 10fr;}
+    .app-wrapper-content{background-image: none;}
 }

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/images/user.png";
-const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto }) => {
+import ProfileDataForm from './ProfileDataForm';
+
+const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, saveProfile }) => {
+
+    let [editMode, setEditMode] = useState(false);
 
     if (!profile) {
         return <Preloader />
@@ -13,6 +17,13 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto }) => {
         if (e.target.files.length) {
             savePhoto(e.target.files[0]);
         }
+    }
+
+    const onSubmit =  (formData) => {
+        saveProfile(formData).then(
+        ()=> {
+            setEditMode(false)
+        })
     }
 
     return (
@@ -35,28 +46,29 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto }) => {
                 </div>
 
             </div>
-
-            <div className={s.descriptionBlock}>
-                <ProfileDescription profile={profile} />
-            </div>
+             {editMode 
+            ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} /> 
+            :   <div className={s.descriptionBlock}>
+                <ProfileDescription profile={profile} isOwner={isOwner} goToEditMode={() => {setEditMode(true)}} />
+            </div>}
         </div>
     )
 }
 
-const ProfileDescription = ({ profile }) => {
+const ProfileDescription = ({ profile, isOwner, goToEditMode }) => {
     return (
         <div>
-
+           { isOwner && <button className="submit" onClick={goToEditMode} >edit</button>}
             <div>
                 <div>
-                    <span className={s.descriptionBlock__spanInfo}>About me: {profile.abooutMe || <b>&#8943;</b> } </span>
+                    <span className={s.descriptionBlock__spanInfo}>About me: {profile.aboutMe || <b>&#8943;</b> } </span>
                 </div>
                 <div>
-                    <span className={s.descriptionBlock__spanInfo}>Looking for a job: {profile.lookingForAJop ? "yes" : "no"} </span>
+                    <span className={s.descriptionBlock__spanInfo}>Looking for a job: {profile.lookingForAJob ? "yes" : "no"} </span>
                 </div>
-                {profile.lookingForAJop &&
+                {profile.lookingForAJob &&
                     <div>
-                        <span className={s.descriptionBlock__spanInfo}>My professionak skills: {profile.lookingForAJop} </span>
+                        <span className={s.descriptionBlock__spanInfo}>My professionak skills: {profile.lookingForAJobDescription} </span>
                     </div>
                 }
                 <div>
@@ -68,6 +80,7 @@ const ProfileDescription = ({ profile }) => {
         </div>
     )
 }
+
 
 const Contacts = ({ contactTitle, contactValue }) => {
     return <div><span>{contactTitle}: {contactValue}</span></div>

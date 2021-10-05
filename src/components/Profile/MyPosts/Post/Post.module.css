@@ -1,6 +1,5 @@
 .item {
-  background-color: rgb(13, 13, 13);
-  color:#bbbbbb ;
+  color:#e4d1ed ;
   margin: 30px;
   padding: 10px;
   max-width: 300px;
@@ -9,5 +8,5 @@
 }
 
 .span__heart{
-  color: red;
+  color: rgb(160, 12, 12);
 }

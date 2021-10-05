@@ -1,0 +1,7 @@
+colors{
+    bg: #491a0c
+    bg: #6b311a
+    bg: #9b5627
+    bg: #d28837
+    bg: #e7c040
+}
