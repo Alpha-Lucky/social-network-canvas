@@ -61,18 +61,28 @@ const ProfileDescription = ({ profile, isOwner, goToEditMode }) => {
            { isOwner && <button className="submit" onClick={goToEditMode} >edit</button>}
             <div>
                 <div>
-                    <span className={s.descriptionBlock__spanInfo}>About me: {profile.aboutMe || <b>&#8943;</b> } </span>
+                    <span className={s.descriptionBlock__spanInfo}>
+                        <b>About me:</b> 
+                        <span>{profile.aboutMe || <b>&#8943;</b> }
+                        </span>
+                        </span>
                 </div>
                 <div>
-                    <span className={s.descriptionBlock__spanInfo}>Looking for a job: {profile.lookingForAJob ? "yes" : "no"} </span>
+                    <span className={s.descriptionBlock__spanInfo}>
+                        <b>Looking for a job:</b> 
+                        <span>{profile.lookingForAJob ? "yes" : "no"}</span>
+                    </span>
                 </div>
                 {profile.lookingForAJob &&
                     <div>
-                        <span className={s.descriptionBlock__spanInfo}>My professionak skills: {profile.lookingForAJobDescription} </span>
+                        <span className={s.descriptionBlock__spanInfo}>
+                        <b>My professionak skills:</b> 
+                        <span>{profile.lookingForAJobDescription}</span>
+                        </span>
                     </div>
                 }
                 <div>
-                    <span className={s.descriptionBlock__spanInfo}> Contacts: {Object.keys(profile.contacts).map(key => {
+                    <span className={s.descriptionBlock__spanInfo}><b>Contacts</b> <hr/> {Object.keys(profile.contacts).map(key => {
                         return <Contacts key={key} contactTitle={key} contactValue={profile.contacts[key]} />
                     })} </span>
                 </div>
@@ -83,7 +93,14 @@ const ProfileDescription = ({ profile, isOwner, goToEditMode }) => {
 
 
 const Contacts = ({ contactTitle, contactValue }) => {
-    return <div><span>{contactTitle}: {contactValue}</span></div>
+    return <div>
+        <span>
+            <b>{contactTitle}:</b>
+             <span>
+                 <a className="linkContent" href={contactValue}>{contactValue}</a>
+            </span>
+        </span>
+        </div>
 }
 
 export default ProfileInfo;

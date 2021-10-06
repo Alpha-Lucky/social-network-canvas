@@ -42,7 +42,8 @@
 .margin30{margin-left: 30px;}
 .display__flex{display: flex;justify-content: flex-start;align-items: center;}
 .border__topAndBot{border-top: 1px #e7c040 solid;border-bottom: 1px #e7c040 solid ;}
-
+.linkContent{text-decoration: none; color: #bbbbbb; cursor: pointer;}
+.captchaImg{margin: 10px 0 10px 30px; border: red 1px solid;}
 
 @media screen and (max-width: 750px) {
     .app-wrapper{grid-template-areas: "n h" "c c"; grid-template-rows: 70px 1fr;     grid-template-columns: 1fr 10fr;}

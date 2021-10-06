@@ -19,7 +19,7 @@
 }
 
 .mainPhoto{
-  max-width: 165px;
+  max-width: 170px;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -55,7 +55,7 @@ input[type="file"] {
     width: 100%;
   }
 .label__down {
-  border: #fff 3px solid;
+    border: #bbbbbb 3px solid;
     display: inline-block;
     position: relative;
     height: 100%;
