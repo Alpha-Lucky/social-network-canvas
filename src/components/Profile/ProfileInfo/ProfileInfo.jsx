@@ -33,11 +33,11 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
                     {isOwner 
                     ? <label className={s.label__down} for="test">
                             <div className={s.input__down}>
-                                <img src={profile.photos.large} />
+                                <img alt="" src={profile.photos.large} />
                             </div>
                                 <input type={"file"} id="test" onChange={onMainPhotoSelected} />
                         </label> 
-                    : <img src={profile.photos.large || userPhoto} alt="" /> }
+                    : <img src={profile.photos.large || userPhoto} alt="userPhoto" /> }
                 </div>
 
                 <div className={s.name__status}>

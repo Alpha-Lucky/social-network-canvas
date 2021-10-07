@@ -8,7 +8,7 @@
   border-radius: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: flex-start;
   word-wrap: break-word;
 }
 .profile__ava_and_name_and_status{

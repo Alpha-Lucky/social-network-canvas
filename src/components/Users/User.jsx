@@ -8,7 +8,7 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
        <div className={styles.container__oneUser + " " + "border__topAndBot"}>
                     <div className={styles.box_ava}>
                        <NavLink to={'/profile/' + user.id}>
-                        <img src={user.photos.small != null ? user.photos.small : userPhoto}
+                        <img alt="" src={user.photos.small !== null ? user.photos.small : userPhoto}
                              className={styles.userPhoto}/>
                        </NavLink>
                        <div>

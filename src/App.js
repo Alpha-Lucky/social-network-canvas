@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import { HashRouter, Route, withRouter } from "react-router-dom";
+import { HashRouter, Route, withRouter, Switch,  } from "react-router-dom";
 
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
@@ -18,11 +18,16 @@ import ScrollToTop from './utils/ScrollToTop';
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
-
-
 class App extends Component {
+    catchAllErrors = (reason, promise) => {
+        alert("Erros, try later")
+    }
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener("unhandledrejection", this.catchAllErrors)
+    }
+    componentWillUnmount(){
+        window.removeEventListener("unhandledrejection", this.catchAllErrors)
     }
 
     render() {
@@ -42,8 +47,9 @@ class App extends Component {
                 </div>
                 <ScrollToTop />
                 <div className='app-wrapper-content'>
-
-                    <Route exact path='/' render={withSuspense(ProfileContainer)} />
+                <Switch> 
+                    <Route exact path='/' 
+                    render={() => <LoginPage />} />
 
                     <Route path='/dialogs'
                         render={withSuspense(DialogsContainer)} />
@@ -56,6 +62,11 @@ class App extends Component {
 
                     <Route path='/login'
                         render={() => <LoginPage />} />
+
+                    
+                    <Route path='/*'
+                        render={() => <div> 404 PAGE NOT FOUND </div>} />
+                </Switch>
                 </div>
             </div>
         )
