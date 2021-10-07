@@ -1,19 +1,24 @@
-.userPhoto {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+.container__glav_users{
+    width: 100%;
+    height: 100%;
 }
+
 .container__users{
     max-width: 1300px;
     margin-left: 15px;
     display: flex;
     flex-wrap: wrap;
 }
+.userPhoto {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
 
 .container__oneUser{
     padding: 15px;
     margin: 30px 30px 30px 0;
-    min-width: 300px;
+    width: 350px;
     max-height: 100%;
     border-radius: 15px;
     background-color: rgba(0,0,0,0.5);
@@ -43,8 +48,9 @@
 }
 .description__username, .description__status {
     margin: 5px;
-    width: 100%;
+    max-width: 150px;
     height: auto;
+    word-wrap: break-word;
 }
 .span__status{
     color:#D1BC8A;

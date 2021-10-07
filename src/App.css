@@ -1,5 +1,4 @@
 .app-wrapper {
-    overflow-x:hidden;
     margin: 0 auto;
     display: grid;
     width: 100%;
@@ -10,6 +9,7 @@
 .header{
     grid-area: h;
 }
+
 .navBar {
     grid-area: n;
     z-index: 1000;

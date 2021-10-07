@@ -19,19 +19,21 @@
 }
 
 .mainPhoto{
-  max-width: 170px;
+  min-width: 130px;
   display: flex;
   justify-content: center;
   cursor: pointer;
   overflow: hidden;
 }
 .mainPhoto img {
-    border: 5px #491a0c double;
-    max-width: 150px;
+    border: 5px #491a0c solid;
+    max-width: 110px;
     border-radius: 50%;
 }
 .name__status{
   text-align: right;
+  max-width: 30vh;
+  overflow: hidden;
 }
 .status__profile_info{
   cursor: pointer;
@@ -55,17 +57,16 @@ input[type="file"] {
     width: 100%;
   }
 .label__down {
-    border: #bbbbbb 3px solid;
-    display: inline-block;
-    position: relative;
-    height: 100%;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
+  border: #bbbbbb 3px solid;
+  display: inline-block;
+  position: relative;
+  height: 119px;
+  width: 119px;
+  border-radius: 50%;
   }
 
 .label__down:hover{opacity: 0.7; transition: 0.7s;}
-.label__down:hover::after {content: "\21BB"; font-size: 30px; color: #491a0c; position: absolute; top: 39%; left: 39%;  }
+.label__down:hover::after {content: "\21BB"; font-size: 30px; color: #491a0c; position: absolute; top: 35%; left: 35%;  }
 
 
 .descriptionBlock {

@@ -14,6 +14,7 @@ import store from "./redux/redux-store";
 import { withSuspense } from "./hoc/withSuspense";
 import NavbarMoble from './components/navBarMoble/NavbarMoble';
 import ScrollToTop from './utils/ScrollToTop';
+import NotFound from './components/common/NotFound/NotFound';
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
@@ -43,7 +44,6 @@ class App extends Component {
                 <div className='navBar'>
                     <Navbar />
                     <NavbarMoble />
-
                 </div>
                 <ScrollToTop />
                 <div className='app-wrapper-content'>
@@ -65,7 +65,7 @@ class App extends Component {
 
                     
                     <Route path='/*'
-                        render={() => <div> 404 PAGE NOT FOUND </div>} />
+                        render={() => <NotFound />} />
                 </Switch>
                 </div>
             </div>

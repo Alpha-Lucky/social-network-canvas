@@ -1,6 +1,6 @@
 
 .container__paginator {
-    width: 100%;
+    max-width: 100%;
     max-height: 300px;
     padding: 30px 5%;
     display: flex;
