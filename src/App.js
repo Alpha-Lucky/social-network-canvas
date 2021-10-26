@@ -21,7 +21,7 @@ const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileCo
 
 class App extends Component {
     catchAllErrors = (reason, promise) => {
-        alert("Erros, try later")
+        console.log("Erros, try later")
     }
     componentDidMount() {
         this.props.initializeApp();
